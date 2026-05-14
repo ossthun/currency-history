@@ -32,6 +32,22 @@ export default function Home() {
               View historical exchange-rate trends over a date range.
             </p>
           </a>
+
+          <a href="/compound" style={styles.option}>
+            <div style={styles.icon}>🧮</div>
+            <h2 style={styles.optionTitle}>Compound Interest</h2>
+            <p style={styles.optionText}>
+              Calculate long-term portfolio growth with recurring investments.
+            </p>
+          </a>
+
+          <a href="/inflation" style={styles.option}>
+            <div style={styles.icon}>🛒</div>
+            <h2 style={styles.optionTitle}>Inflation Calculator</h2>
+            <p style={styles.optionText}>
+              See how purchasing power changes over time.
+            </p>
+          </a>
         </div>
 
         <div style={styles.footer}>
@@ -59,7 +75,7 @@ const styles = {
 
   card: {
     width: "100%",
-    maxWidth: "900px",
+    maxWidth: "980px",
     background: "rgba(255, 255, 255, 0.94)",
     padding: "38px",
     borderRadius: "28px",
