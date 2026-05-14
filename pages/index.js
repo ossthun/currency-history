@@ -34,7 +34,7 @@ export default function Home() {
           </a>
 
           <a href="/etf" style={styles.option}>
-            <div style={styles.icon}>📉</div>
+            <div style={styles.icon}>🏦</div>
             <h2 style={styles.optionTitle}>ETF Return Calculator</h2>
             <p style={styles.optionText}>
               Estimate ETF portfolio growth with recurring investments.
@@ -50,7 +50,7 @@ export default function Home() {
 </a>
 
           <a href="/compound" style={styles.option}>
-            <div style={styles.icon}>🧮</div>
+            <div style={styles.icon}>🌱</div>
             <h2 style={styles.optionTitle}>Compound Interest</h2>
             <p style={styles.optionText}>
               Calculate long-term portfolio growth with recurring investments.
