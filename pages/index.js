@@ -11,7 +11,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   function convertDateToApiFormat(input) {
-    const match = input.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+    const match = input.trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
 
     if (!match) {
       throw new Error("Please enter the date as dd.mm.yyyy.");
@@ -34,7 +34,7 @@ export default function Home() {
       const apiDate = convertDateToApiFormat(date);
 
       const response = await fetch(
-        `https://api.frankfurter.dev/v2/rates?date=${apiDate}&base=${from}&quotes=${to}`
+        `https://api.frankfurter.dev/v1/${apiDate}?base=${from}&symbols=${to}`
       );
 
       const data = await response.json();
@@ -43,17 +43,13 @@ export default function Home() {
         throw new Error(data.message || "Load failed.");
       }
 
-      const matchingRate = Array.isArray(data.rates)
-        ? data.rates.find((item) => item.quote === to)
-        : null;
-
-      if (!matchingRate) {
+      if (!data.rates || data.rates[to] === undefined) {
         throw new Error("No exchange rate found for this date.");
       }
 
       setResult({
-        rate: matchingRate.rate,
-        date: matchingRate.date || data.date || apiDate,
+        rate: data.rates[to],
+        date: data.date || apiDate,
       });
     } catch (err) {
       setError(err.message || "Load failed.");
