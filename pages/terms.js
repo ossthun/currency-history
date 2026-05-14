@@ -54,8 +54,8 @@ export default function TermsPage() {
         <section style={styles.section}>
           <h2 style={styles.heading}>5. No warranty</h2>
           <p style={styles.text}>
-            This website is provided on an “as is” and “as available” basis.
-            No warranty or guarantee is made regarding accuracy, completeness,
+            This website is provided on an “as is” and “as available” basis. No
+            warranty or guarantee is made regarding accuracy, completeness,
             availability, timeliness, reliability, suitability, security, or
             error-free operation.
           </p>
@@ -78,16 +78,30 @@ export default function TermsPage() {
           <h2 style={styles.heading}>7. External data and third-party services</h2>
           <p style={styles.text}>
             The website may use external data providers, APIs, market data
-            sources, hosting providers, analytics providers, or other third-party
-            services. The website operator is not responsible for the accuracy,
-            availability, legality, policies, or conduct of third-party services.
-            Third-party names, trademarks, tickers, and data remain the property
-            of their respective owners.
+            sources, hosting providers, analytics providers, advertising
+            providers, affiliate services, or other third-party services. The
+            website operator is not responsible or liable for the accuracy,
+            availability, legality, policies, products, services, conduct, or
+            practices of any third party. Third-party names, trademarks, tickers,
+            and data remain the property of their respective owners.
           </p>
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>8. Acceptable use</h2>
+          <h2 style={styles.heading}>8. External links and affiliate links</h2>
+          <p style={styles.text}>
+            This website may contain links to external websites, affiliate
+            links, advertisements, sponsored content, or external resources. The
+            website operator is not responsible or liable for any external
+            website, affiliate service, advertisement, product, service, content,
+            policy, loss, damage, or transaction arising from your interaction
+            with third parties. Access to external websites and services is at
+            your own risk.
+          </p>
+        </section>
+
+        <section style={styles.section}>
+          <h2 style={styles.heading}>9. Acceptable use</h2>
           <p style={styles.text}>
             You may not misuse this website, interfere with its operation, try
             to bypass security controls, overload the service, scrape it
@@ -97,7 +111,7 @@ export default function TermsPage() {
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>9. Intellectual property</h2>
+          <h2 style={styles.heading}>10. Intellectual property</h2>
           <p style={styles.text}>
             The website design, layout, text, code, and original content are
             protected by applicable intellectual property laws unless otherwise
@@ -109,7 +123,7 @@ export default function TermsPage() {
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>10. No guarantee of continued availability</h2>
+          <h2 style={styles.heading}>11. No guarantee of continued availability</h2>
           <p style={styles.text}>
             The website may be changed, suspended, limited, or discontinued at
             any time without notice. Features, data sources, calculations, and
@@ -118,7 +132,7 @@ export default function TermsPage() {
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>11. Changes to these terms</h2>
+          <h2 style={styles.heading}>12. Changes to these terms</h2>
           <p style={styles.text}>
             These Terms of Use may be updated at any time. The version published
             on this website at the time of use applies. Continued use of the
@@ -127,12 +141,23 @@ export default function TermsPage() {
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>12. Governing law</h2>
+          <h2 style={styles.heading}>13. Governing law</h2>
           <p style={styles.text}>
-            To the extent permitted by applicable law, these Terms of Use are
-            governed by the laws of Switzerland. Mandatory consumer-protection
-            rules in your place of residence may still apply where legally
-            required.
+            To the maximum extent permitted by applicable law, these Terms of Use
+            and all disputes, claims, controversies, or legal proceedings arising
+            from or related to the use of this website are governed by the laws
+            of Switzerland. Mandatory consumer-protection rules in your place of
+            residence may still apply where legally required.
+          </p>
+        </section>
+
+        <section style={styles.section}>
+          <h2 style={styles.heading}>14. Jurisdiction and venue</h2>
+          <p style={styles.text}>
+            To the maximum extent permitted by applicable law, all disputes,
+            claims, controversies, and legal proceedings arising from or related
+            to the use of this website shall be resolved exclusively in the
+            competent courts of Switzerland.
           </p>
         </section>
 
