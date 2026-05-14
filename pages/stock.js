@@ -19,9 +19,6 @@ export default function StockPage() {
 
     return {
       apiDate: `${year}-${month}-${day}`,
-      year: Number(year),
-      month: Number(month),
-      day: Number(day),
     };
   }
 
@@ -42,100 +39,19 @@ export default function StockPage() {
       const parsed = convertDateToApiFormat(date);
       const apiDate = parsed.apiDate;
 
-      const requestedDate = new Date(
-        Date.UTC(parsed.year, parsed.month - 1, parsed.day)
+      const response = await fetch(
+        `/api/stock-price?ticker=${encodeURIComponent(
+          ticker.trim().toUpperCase()
+        )}&date=${encodeURIComponent(apiDate)}`
       );
 
-      const startDate = new Date(requestedDate);
-      startDate.setUTCDate(startDate.getUTCDate() - 14);
-
-      const endDate = new Date(requestedDate);
-      endDate.setUTCDate(endDate.getUTCDate() + 1);
-
-      const period1 = Math.floor(startDate.getTime() / 1000);
-      const period2 = Math.floor(endDate.getTime() / 1000);
-
-      const url =
-        `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(
-          ticker.trim().toUpperCase()
-        )}` +
-        `?period1=${period1}` +
-        `&period2=${period2}` +
-        `&interval=1d`;
-
-      const response = await fetch(url);
+      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error("Could not load stock data.");
+        throw new Error(data.error || "Could not load stock price.");
       }
 
-      const data = await response.json();
-      const chart = data.chart;
-
-      if (!chart || chart.error) {
-        throw new Error(chart?.error?.description || "No stock data found.");
-      }
-
-      const resultData = chart.result?.[0];
-
-      if (
-        !resultData ||
-        !resultData.timestamp ||
-        !resultData.indicators?.quote?.[0]
-      ) {
-        throw new Error("No historical stock data found.");
-      }
-
-      const quote = resultData.indicators.quote[0];
-
-      const rows = resultData.timestamp
-        .map((timestamp, index) => {
-          const rowDate = new Date(timestamp * 1000).toISOString().slice(0, 10);
-
-          return {
-            date: rowDate,
-            open: quote.open?.[index],
-            high: quote.high?.[index],
-            low: quote.low?.[index],
-            close: quote.close?.[index],
-            volume: quote.volume?.[index],
-          };
-        })
-        .filter((row) => row.close !== null && row.close !== undefined);
-
-      if (rows.length === 0) {
-        throw new Error("No valid trading data found.");
-      }
-
-      const exactMatch = rows.find((row) => row.date === apiDate);
-
-      const selectedRow =
-        exactMatch || rows.filter((row) => row.date < apiDate).at(-1);
-
-      if (!selectedRow) {
-        throw new Error("No earlier trading day found.");
-      }
-
-      setResult({
-        ticker: ticker.trim().toUpperCase(),
-        requestedDate: apiDate,
-        usedDate: selectedRow.date,
-        close: Number(selectedRow.close).toFixed(2),
-        open:
-          selectedRow.open !== null && selectedRow.open !== undefined
-            ? Number(selectedRow.open).toFixed(2)
-            : "n/a",
-        high:
-          selectedRow.high !== null && selectedRow.high !== undefined
-            ? Number(selectedRow.high).toFixed(2)
-            : "n/a",
-        low:
-          selectedRow.low !== null && selectedRow.low !== undefined
-            ? Number(selectedRow.low).toFixed(2)
-            : "n/a",
-        volume: selectedRow.volume ?? "n/a",
-        exact: selectedRow.date === apiDate,
-      });
+      setResult(data);
     } catch (err) {
       setError(err.message || "Could not load stock price.");
     } finally {
