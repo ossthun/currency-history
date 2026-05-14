@@ -25,14 +25,13 @@ const nextConfig = {
 
           {
             key: "Permissions-Policy",
-            value:
-              "camera=(), microphone=(), geolocation=()",
+            value: "camera=(), microphone=(), geolocation=()",
           },
 
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; connect-src 'self' https://api.frankfurter.dev; style-src 'self' 'unsafe-inline'; img-src 'self' data:;",
+              "default-src 'self'; connect-src 'self' https://api.frankfurter.dev https://query1.finance.yahoo.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;",
           },
         ],
       },
