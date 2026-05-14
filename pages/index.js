@@ -6,9 +6,7 @@ export default function Home() {
 
         <h1 style={styles.title}>Historical Market Tools</h1>
 
-        <p style={styles.subtitle}>
-          Choose a tool below.
-        </p>
+        <p style={styles.subtitle}>Choose a tool below.</p>
 
         <div style={styles.grid}>
           <a href="/currency" style={styles.option}>
@@ -24,6 +22,14 @@ export default function Home() {
             <h2 style={styles.optionTitle}>Stock Price Lookup</h2>
             <p style={styles.optionText}>
               Look up historical stock prices by ticker and date.
+            </p>
+          </a>
+
+          <a href="/chart" style={styles.option}>
+            <div style={styles.icon}>📊</div>
+            <h2 style={styles.optionTitle}>Currency Chart</h2>
+            <p style={styles.optionText}>
+              View historical exchange-rate trends over a date range.
             </p>
           </a>
         </div>
@@ -53,7 +59,7 @@ const styles = {
 
   card: {
     width: "100%",
-    maxWidth: "760px",
+    maxWidth: "900px",
     background: "rgba(255, 255, 255, 0.94)",
     padding: "38px",
     borderRadius: "28px",
