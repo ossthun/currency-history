@@ -65,11 +65,11 @@ export default function Home() {
             </p>
           </a>
 
-          <a href="/inflation" style={styles.option}>
-            <div style={styles.icon}>🛒</div>
-            <h2 style={styles.optionTitle}>Inflation Calculator</h2>
+          <a href="/fire" style={styles.option}>
+            <div style={styles.icon}>🔥</div>
+            <h2 style={styles.optionTitle}>FIRE Calculator</h2>
             <p style={styles.optionText}>
-              See how purchasing power changes over time.
+              Estimate when your investments may reach financial independence.
             </p>
           </a>
 
@@ -78,6 +78,14 @@ export default function Home() {
             <h2 style={styles.optionTitle}>Loan Calculator</h2>
             <p style={styles.optionText}>
               Estimate loan payments, interest costs, and repayment schedules.
+            </p>
+          </a>
+
+          <a href="/inflation" style={styles.option}>
+            <div style={styles.icon}>🛒</div>
+            <h2 style={styles.optionTitle}>Inflation Calculator</h2>
+            <p style={styles.optionText}>
+              See how purchasing power changes over time.
             </p>
           </a>
 
@@ -94,14 +102,6 @@ export default function Home() {
             <h2 style={styles.optionTitle}>Retirement Calculator</h2>
             <p style={styles.optionText}>
               Estimate whether your savings can support your retirement goals.
-            </p>
-          </a>
-
-          <a href="/fire" style={styles.option}>
-            <div style={styles.icon}>🔥</div>
-            <h2 style={styles.optionTitle}>FIRE Calculator</h2>
-            <p style={styles.optionText}>
-              Estimate when your investments may reach financial independence.
             </p>
           </a>
         </div>
