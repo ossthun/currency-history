@@ -41,6 +41,14 @@ export default function Home() {
             </p>
           </a>
 
+          <a href="/crypto" style={styles.option}>
+            <div style={styles.icon}>🪙</div>
+            <h2 style={styles.optionTitle}>Crypto Profit Calculator</h2>
+            <p style={styles.optionText}>
+              Estimate cryptocurrency gains, losses, and fees.
+            </p>
+          </a>
+
           <a href="/compound" style={styles.option}>
             <div style={styles.icon}>🧮</div>
             <h2 style={styles.optionTitle}>Compound Interest</h2>
@@ -94,14 +102,6 @@ export default function Home() {
             <h2 style={styles.optionTitle}>FIRE Calculator</h2>
             <p style={styles.optionText}>
               Estimate when your investments may reach financial independence.
-            </p>
-          </a>
-
-          <a href="/crypto" style={styles.option}>
-            <div style={styles.icon}>🪙</div>
-            <h2 style={styles.optionTitle}>Crypto Profit Calculator</h2>
-            <p style={styles.optionText}>
-              Estimate cryptocurrency gains, losses, and fees.
             </p>
           </a>
         </div>
