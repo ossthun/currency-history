@@ -41,13 +41,14 @@ export default function Home() {
             </p>
           </a>
 
-         <a href="/dividend" style={styles.option}>
-  <div style={styles.icon}>💰</div>
-  <h2 style={styles.optionTitle}>Dividend Calculator</h2>
-  <p style={styles.optionText}>
-    Estimate dividend income, cash flow, and long-term dividend growth.
-  </p>
-</a>
+          <a href="/dividend" style={styles.option}>
+            <div style={styles.icon}>💰</div>
+            <h2 style={styles.optionTitle}>Dividend Calculator</h2>
+            <p style={styles.optionText}>
+              Estimate dividend income, cash flow, and long-term dividend
+              growth.
+            </p>
+          </a>
 
           <a href="/compound" style={styles.option}>
             <div style={styles.icon}>🌱</div>
@@ -107,9 +108,25 @@ export default function Home() {
         </div>
 
         <div style={styles.footer}>
-          Data is provided by external sources. Calculators are for
-          informational purposes only. No guarantee is made regarding accuracy or
-          completeness. Use at your own risk.
+          <div>
+            Data is provided by external sources. Calculators are for
+            informational purposes only. No guarantee is made regarding accuracy
+            or completeness. Use at your own risk.
+          </div>
+
+          <div style={styles.legalLinks}>
+            <a href="/disclaimer" style={styles.legalLink}>
+              Disclaimer
+            </a>
+            <span style={styles.separator}>·</span>
+            <a href="/terms" style={styles.legalLink}>
+              Terms
+            </a>
+            <span style={styles.separator}>·</span>
+            <a href="/privacy" style={styles.legalLink}>
+              Privacy
+            </a>
+          </div>
         </div>
       </div>
     </main>
@@ -202,11 +219,30 @@ const styles = {
   },
 
   footer: {
-  marginTop: "28px",
-  textAlign: "center",
-  fontSize: "13px",
-  color: "#dc2626",
-  lineHeight: 1.5,
-  fontWeight: "600",
-},
+    marginTop: "28px",
+    textAlign: "center",
+    fontSize: "13px",
+    color: "#dc2626",
+    lineHeight: 1.5,
+    fontWeight: "600",
+  },
+
+  legalLinks: {
+    marginTop: "10px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "8px",
+    flexWrap: "wrap",
+  },
+
+  legalLink: {
+    color: "#b91c1c",
+    textDecoration: "underline",
+    fontWeight: "700",
+  },
+
+  separator: {
+    color: "#dc2626",
+  },
 };
