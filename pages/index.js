@@ -48,11 +48,36 @@ export default function Home() {
               See how purchasing power changes over time.
             </p>
           </a>
+
+          <a href="/etf" style={styles.option}>
+            <div style={styles.icon}>📉</div>
+            <h2 style={styles.optionTitle}>ETF Return Calculator</h2>
+            <p style={styles.optionText}>
+              Estimate ETF portfolio growth with recurring investments.
+            </p>
+          </a>
+
+          <a href="/mortgage" style={styles.option}>
+            <div style={styles.icon}>🏠</div>
+            <h2 style={styles.optionTitle}>Mortgage Calculator</h2>
+            <p style={styles.optionText}>
+              Estimate monthly payments, total interest, and payoff timeline.
+            </p>
+          </a>
+
+          <a href="/retirement" style={styles.option}>
+            <div style={styles.icon}>👴</div>
+            <h2 style={styles.optionTitle}>Retirement Calculator</h2>
+            <p style={styles.optionText}>
+              Estimate whether your savings can support your retirement goals.
+            </p>
+          </a>
         </div>
 
         <div style={styles.footer}>
-          Data is provided by external sources. No guarantee is made regarding
-          accuracy or completeness. Use at your own risk.
+          Data is provided by external sources. Calculators are for
+          informational purposes only. No guarantee is made regarding accuracy or
+          completeness. Use at your own risk.
         </div>
       </div>
     </main>
@@ -75,7 +100,7 @@ const styles = {
 
   card: {
     width: "100%",
-    maxWidth: "980px",
+    maxWidth: "1080px",
     background: "rgba(255, 255, 255, 0.94)",
     padding: "38px",
     borderRadius: "28px",
