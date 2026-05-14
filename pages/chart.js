@@ -215,53 +215,70 @@ export default function ChartPage() {
   }
 
   async function fetchChart() {
-    setLoading(true);
-    setError("");
-    setPoints([]);
+  setLoading(true);
+  setError("");
+  setPoints([]);
 
-    try {
-      if (!startDate.trim() || !endDate.trim()) {
-        throw new Error(t.enterDates);
-      }
-
-      if (from === to) {
-        throw new Error(t.sameCurrency);
-      }
-
-      const apiStart = convertDateToApiFormat(startDate);
-      const apiEnd = convertDateToApiFormat(endDate);
-
-      const response = await fetch(
-        `https://api.frankfurter.app/${apiStart}..${apiEnd}?from=${encodeURIComponent(
-          from
-        )}&to=${encodeURIComponent(to)}`
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(t.loadFailed);
-      }
-
-      const parsedPoints = Object.entries(data.rates || {})
-        .map(([date, values]) => ({
-          date,
-          rate: values[to],
-        }))
-        .filter((point) => typeof point.rate === "number")
-        .sort((a, b) => a.date.localeCompare(b.date));
-
-      if (!parsedPoints.length) {
-        throw new Error(t.noData);
-      }
-
-      setPoints(parsedPoints);
-    } catch (err) {
-      setError(err.message || t.loadFailed);
-    } finally {
-      setLoading(false);
+  try {
+    if (!startDate.trim() || !endDate.trim()) {
+      throw new Error(t.enterDates);
     }
+
+    if (from === to) {
+      throw new Error(t.sameCurrency);
+    }
+
+    const apiStart = convertDateToApiFormat(startDate);
+    const apiEnd = convertDateToApiFormat(endDate);
+
+    const urls = [
+      `https://api.frankfurter.app/${apiStart}..${apiEnd}?from=${from}&to=${to}`,
+      `https://api.frankfurter.dev/v1/${apiStart}..${apiEnd}?from=${from}&to=${to}`,
+    ];
+
+    let data = null;
+    let lastError = "";
+
+    for (const url of urls) {
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+
+        if (!response.ok) {
+          lastError = text || response.statusText;
+          continue;
+        }
+
+        data = JSON.parse(text);
+        break;
+      } catch (err) {
+        lastError = err.message;
+      }
+    }
+
+    if (!data) {
+      throw new Error(lastError || t.loadFailed);
+    }
+
+    const parsedPoints = Object.entries(data.rates || {})
+      .map(([date, values]) => ({
+        date,
+        rate: values[to],
+      }))
+      .filter((point) => typeof point.rate === "number")
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    if (!parsedPoints.length) {
+      throw new Error(t.noData);
+    }
+
+    setPoints(parsedPoints);
+  } catch (err) {
+    setError(err.message || t.loadFailed);
+  } finally {
+    setLoading(false);
   }
+}
 
   function handleKeyDown(e) {
     if (e.key === "Enter") {
