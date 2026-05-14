@@ -41,13 +41,13 @@ export default function Home() {
             </p>
           </a>
 
-          <a href="/crypto" style={styles.option}>
-            <div style={styles.icon}>🪙</div>
-            <h2 style={styles.optionTitle}>Crypto Profit Calculator</h2>
-            <p style={styles.optionText}>
-              Estimate cryptocurrency gains, losses, and fees.
-            </p>
-          </a>
+         <a href="/dividend" style={styles.option}>
+  <div style={styles.icon}>💰</div>
+  <h2 style={styles.optionTitle}>Dividend Calculator</h2>
+  <p style={styles.optionText}>
+    Estimate dividend income, cash flow, and long-term dividend growth.
+  </p>
+</a>
 
           <a href="/compound" style={styles.option}>
             <div style={styles.icon}>🧮</div>
