@@ -30,7 +30,6 @@ export default function Home() {
     }
 
     const [, day, month, year] = match;
-
     return `${year}-${month}-${day}`;
   }
 
@@ -152,9 +151,7 @@ export default function Home() {
 
         {result && (
           <div style={styles.result}>
-            <div style={styles.resultTop}>
-              1 {from} =
-            </div>
+            <div style={styles.resultTop}>1 {from} =</div>
 
             <div style={styles.resultRate}>
               {result.rate} {to}
@@ -165,6 +162,10 @@ export default function Home() {
         )}
 
         {error && <div style={styles.error}>{error}</div>}
+
+        <div style={styles.footer}>
+          Exchange rates provided by Frankfurter API.
+        </div>
       </div>
     </main>
   );
@@ -293,5 +294,12 @@ const styles = {
     textAlign: "center",
     fontWeight: "700",
     border: "1px solid #fecaca",
+  },
+
+  footer: {
+    marginTop: "24px",
+    textAlign: "center",
+    fontSize: "13px",
+    color: "#64748b",
   },
 };
