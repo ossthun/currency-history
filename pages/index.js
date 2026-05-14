@@ -4,7 +4,7 @@ export default function Home() {
       <div style={styles.card}>
         <div style={styles.badge}>Finance Tools</div>
 
-        <h1 style={styles.title}>Historical Market Tools</h1>
+        <h1 style={styles.title}>Finance Toolkit</h1>
 
         <p style={styles.subtitle}>Choose a tool below.</p>
 
