@@ -174,11 +174,6 @@ export default function PrivacyPage() {
           </p>
         </section>
 
-        <div style={styles.warningBox}>
-          <strong>Note:</strong> If analytics, advertising, cookies, newsletter
-          signups, payments, or user accounts are added later, this Privacy
-          Policy should be updated before those features go live.
-        </div>
       </div>
     </main>
   );
