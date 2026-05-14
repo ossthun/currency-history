@@ -17,6 +17,14 @@ export default function Home() {
             </p>
           </a>
 
+          <a href="/chart" style={styles.option}>
+            <div style={styles.icon}>📊</div>
+            <h2 style={styles.optionTitle}>Currency Chart</h2>
+            <p style={styles.optionText}>
+              View historical exchange-rate trends over a date range.
+            </p>
+          </a>
+
           <a href="/stock" style={styles.option}>
             <div style={styles.icon}>📈</div>
             <h2 style={styles.optionTitle}>Stock Price Lookup</h2>
@@ -25,11 +33,11 @@ export default function Home() {
             </p>
           </a>
 
-          <a href="/chart" style={styles.option}>
-            <div style={styles.icon}>📊</div>
-            <h2 style={styles.optionTitle}>Currency Chart</h2>
+          <a href="/etf" style={styles.option}>
+            <div style={styles.icon}>📉</div>
+            <h2 style={styles.optionTitle}>ETF Return Calculator</h2>
             <p style={styles.optionText}>
-              View historical exchange-rate trends over a date range.
+              Estimate ETF portfolio growth with recurring investments.
             </p>
           </a>
 
@@ -49,14 +57,6 @@ export default function Home() {
             </p>
           </a>
 
-          <a href="/etf" style={styles.option}>
-            <div style={styles.icon}>📉</div>
-            <h2 style={styles.optionTitle}>ETF Return Calculator</h2>
-            <p style={styles.optionText}>
-              Estimate ETF portfolio growth with recurring investments.
-            </p>
-          </a>
-
           <a href="/mortgage" style={styles.option}>
             <div style={styles.icon}>🏠</div>
             <h2 style={styles.optionTitle}>Mortgage Calculator</h2>
@@ -66,7 +66,7 @@ export default function Home() {
           </a>
 
           <a href="/retirement" style={styles.option}>
-            <div style={styles.icon}>👴</div>
+            <div style={styles.icon}>🌴</div>
             <h2 style={styles.optionTitle}>Retirement Calculator</h2>
             <p style={styles.optionText}>
               Estimate whether your savings can support your retirement goals.
