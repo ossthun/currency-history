@@ -3,107 +3,109 @@ export default async function handler(req, res) {
     const { ticker, date } = req.query;
 
     if (!ticker || !date) {
-      return res.status(400).json({
-        error: "Missing ticker or date.",
-      });
+      return res.status(400).json({ error: "Missing ticker or date." });
     }
 
     const cleanTicker = String(ticker).trim().toLowerCase();
     const cleanDate = String(date).trim();
 
     if (!/^[a-z0-9.^-]+$/i.test(cleanTicker)) {
-      return res.status(400).json({
-        error: "Invalid ticker format.",
-      });
+      return res.status(400).json({ error: "Invalid ticker format." });
     }
 
     if (!/^\d{4}-\d{2}-\d{2}$/.test(cleanDate)) {
-      return res.status(400).json({
-        error: "Invalid date format.",
-      });
+      return res.status(400).json({ error: "Invalid date format." });
     }
+
+    const requested = new Date(`${cleanDate}T00:00:00Z`);
+    const start = new Date(requested);
+    start.setUTCDate(start.getUTCDate() - 14);
+
+    const formatForStooq = (d) =>
+      `${d.getUTCFullYear()}${String(d.getUTCMonth() + 1).padStart(2, "0")}${String(
+        d.getUTCDate()
+      ).padStart(2, "0")}`;
+
+    const d1 = formatForStooq(start);
+    const d2 = formatForStooq(requested);
 
     const url = `https://stooq.com/q/d/l/?s=${encodeURIComponent(
       cleanTicker
-    )}&i=d`;
+    )}&d1=${d1}&d2=${d2}&i=d`;
 
     const response = await fetch(url);
 
     if (!response.ok) {
-      return res.status(502).json({
-        error: "Could not load stock data.",
-      });
+      return res.status(502).json({ error: "Could not load stock data." });
     }
 
     const csv = await response.text();
 
-    if (!csv || csv.toLowerCase().includes("no data")) {
+    const lines = csv
+      .trim()
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    if (lines.length < 2 || !lines[0].toLowerCase().startsWith("date,")) {
       return res.status(404).json({
-        error: "No data found for this ticker.",
+        error: "No valid price history found for this ticker.",
       });
     }
 
-    const lines = csv.trim().split("\n");
+    const rows = lines
+      .slice(1)
+      .map((line) => {
+        const [rowDate, open, high, low, close, volume] = line.split(",");
 
-    if (lines.length < 2) {
+        return {
+          date: rowDate,
+          open,
+          high,
+          low,
+          close,
+          volume,
+        };
+      })
+      .filter((row) => {
+        return (
+          /^\d{4}-\d{2}-\d{2}$/.test(row.date) &&
+          row.open &&
+          row.high &&
+          row.low &&
+          row.close
+        );
+      });
+
+    if (rows.length === 0) {
       return res.status(404).json({
-        error: "No price history found for this ticker.",
+        error: "No valid trading data found for this ticker and date.",
       });
     }
-
-    const rows = lines.slice(1).map((line) => {
-      const [rowDate, open, high, low, close, volume] = line.split(",");
-
-      return {
-        date: rowDate,
-        open,
-        high,
-        low,
-        close,
-        volume,
-      };
-    });
 
     const exactMatch = rows.find((row) => row.date === cleanDate);
 
-    if (exactMatch) {
-      return res.status(200).json({
-        ticker: cleanTicker.toUpperCase(),
-        requestedDate: cleanDate,
-        usedDate: exactMatch.date,
-        close: exactMatch.close,
-        open: exactMatch.open,
-        high: exactMatch.high,
-        low: exactMatch.low,
-        volume: exactMatch.volume,
-        exact: true,
-      });
-    }
+    const selectedRow =
+      exactMatch || rows.filter((row) => row.date < cleanDate).at(-1);
 
-    const earlierRows = rows.filter((row) => row.date < cleanDate);
-
-    if (earlierRows.length === 0) {
+    if (!selectedRow) {
       return res.status(404).json({
         error: "No earlier trading day found for this date.",
       });
     }
 
-    const fallback = earlierRows[earlierRows.length - 1];
-
     return res.status(200).json({
       ticker: cleanTicker.toUpperCase(),
       requestedDate: cleanDate,
-      usedDate: fallback.date,
-      close: fallback.close,
-      open: fallback.open,
-      high: fallback.high,
-      low: fallback.low,
-      volume: fallback.volume,
-      exact: false,
+      usedDate: selectedRow.date,
+      close: selectedRow.close,
+      open: selectedRow.open,
+      high: selectedRow.high,
+      low: selectedRow.low,
+      volume: selectedRow.volume,
+      exact: selectedRow.date === cleanDate,
     });
   } catch (error) {
-    return res.status(500).json({
-      error: "Server error.",
-    });
+    return res.status(500).json({ error: "Server error." });
   }
 }
