@@ -13,7 +13,7 @@ const currencies = [
   { code: "DKK", name: "Danish Krone", flag: "🇩🇰" },
 ];
 
-export default function Home() {
+export default function CurrencyPage() {
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("CHF");
   const [date, setDate] = useState("");
@@ -30,6 +30,7 @@ export default function Home() {
     }
 
     const [, day, month, year] = match;
+
     return `${year}-${month}-${day}`;
   }
 
@@ -105,6 +106,10 @@ export default function Home() {
   return (
     <main style={styles.page}>
       <div style={styles.card}>
+        <a href="/" style={styles.backLink}>
+          ← All tools
+        </a>
+
         <div style={styles.badge}>Historical FX Rate</div>
 
         <h1 style={styles.title}>Currency Converter</h1>
@@ -115,6 +120,7 @@ export default function Home() {
 
         <div style={styles.fieldGroup}>
           <label style={styles.label}>Currency 1</label>
+
           <select value={from} onChange={handleFromChange} style={styles.input}>
             {currencies.map((currency) => (
               <option key={currency.code} value={currency.code}>
@@ -126,6 +132,7 @@ export default function Home() {
 
         <div style={styles.fieldGroup}>
           <label style={styles.label}>Currency 2</label>
+
           <select value={to} onChange={handleToChange} style={styles.input}>
             {currencies.map((currency) => (
               <option key={currency.code} value={currency.code}>
@@ -137,6 +144,7 @@ export default function Home() {
 
         <div style={styles.fieldGroup}>
           <label style={styles.label}>Date</label>
+
           <input
             type="text"
             value={date}
@@ -147,29 +155,43 @@ export default function Home() {
           />
         </div>
 
-        {loading && <div style={styles.loading}>Loading exchange rate...</div>}
+        {loading && (
+          <div style={styles.loading}>
+            Loading exchange rate...
+          </div>
+        )}
 
         {result && (
           <div style={styles.result}>
-            <div style={styles.resultTop}>1 {from} =</div>
+            <div style={styles.resultTop}>
+              1 {from} =
+            </div>
 
             <div style={styles.resultRate}>
               {result.rate} {to}
             </div>
 
-            <div style={styles.small}>Date used: {result.date}</div>
+            <div style={styles.small}>
+              Date used: {result.date}
+            </div>
           </div>
         )}
 
-        {error && <div style={styles.error}>{error}</div>}
+        {error && (
+          <div style={styles.error}>
+            {error}
+          </div>
+        )}
 
-       <div style={styles.footer}>
-  Exchange rates provided by Frankfurter API.
-  <br />
-  This website is not officially affiliated with Frankfurter or the European Central Bank (ECB).
-  <br />
-  No guarantee is made regarding the accuracy or completeness of exchange rates. Use at your own risk.
-</div>
+        <div style={styles.footer}>
+          Exchange rates provided by Frankfurter API.
+          <br />
+          This website is not officially affiliated with Frankfurter or the
+          European Central Bank (ECB).
+          <br />
+          No guarantee is made regarding the accuracy or completeness of
+          exchange rates. Use at your own risk.
+        </div>
       </div>
     </main>
   );
@@ -197,6 +219,15 @@ const styles = {
     borderRadius: "24px",
     boxShadow: "0 24px 70px rgba(15, 23, 42, 0.14)",
     border: "1px solid rgba(255, 255, 255, 0.8)",
+  },
+
+  backLink: {
+    display: "inline-block",
+    marginBottom: "18px",
+    color: "#2563eb",
+    textDecoration: "none",
+    fontWeight: "700",
+    fontSize: "14px",
   },
 
   badge: {
@@ -305,5 +336,6 @@ const styles = {
     textAlign: "center",
     fontSize: "13px",
     color: "#64748b",
+    lineHeight: 1.5,
   },
 };
