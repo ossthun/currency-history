@@ -170,14 +170,19 @@ const styles = {
     border: "1px solid rgba(255, 255, 255, 0.8)",
   },
 
-  backLink: {
-    display: "inline-block",
-    marginBottom: "18px",
-    color: "#2563eb",
-    textDecoration: "none",
-    fontWeight: "700",
-    fontSize: "14px",
-  },
+backLink: {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "6px",
+  marginBottom: "28px",
+  padding: "8px 14px",
+  borderRadius: "999px",
+  background: "#f1f5f9",
+  color: "#2563eb",
+  textDecoration: "none",
+  fontWeight: "700",
+  fontSize: "14px",
+},
 
   badge: {
     display: "inline-block",
