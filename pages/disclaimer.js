@@ -119,29 +119,43 @@ export default function DisclaimerPage() {
           <h2 style={styles.heading}>10. External data and third parties</h2>
           <p style={styles.text}>
             This website may use or refer to external data providers, public
-            APIs, exchanges, market-data sources, and third-party services. The
-            website is not officially affiliated with, endorsed by, sponsored
-            by, or approved by any such provider unless expressly stated.
-            Third-party names, tickers, trademarks, and data sources remain the
-            property of their respective owners.
+            APIs, exchanges, market-data sources, hosting providers, analytics
+            providers, advertising providers, affiliate services, and third-party
+            services. The website is not officially affiliated with, endorsed
+            by, sponsored by, or approved by any such provider unless expressly
+            stated. Third-party names, tickers, trademarks, and data sources
+            remain the property of their respective owners.
           </p>
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>11. Limitation of liability</h2>
+          <h2 style={styles.heading}>11. External links, affiliates, and advertisements</h2>
+          <p style={styles.text}>
+            This website may contain links to external websites, third-party
+            services, affiliate links, advertisements, sponsored content, or
+            external resources. The website operator is not responsible or liable
+            for the availability, accuracy, legality, content, policies,
+            products, services, conduct, transactions, losses, damages, or
+            practices of any third party. Access to external websites and
+            services is at your own risk.
+          </p>
+        </section>
+
+        <section style={styles.section}>
+          <h2 style={styles.heading}>12. Limitation of liability</h2>
           <p style={styles.text}>
             To the maximum extent permitted by applicable law, the website
             operator accepts no liability for any direct, indirect, incidental,
             consequential, special, punitive, or other damages, losses, costs,
             claims, or expenses arising from or connected with the use of this
             website, reliance on its information, unavailable data, calculation
-            errors, technical interruptions, or financial decisions made by
-            users.
+            errors, technical interruptions, affiliate links, advertisements,
+            third-party services, or financial decisions made by users.
           </p>
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>12. User responsibility</h2>
+          <h2 style={styles.heading}>13. User responsibility</h2>
           <p style={styles.text}>
             You are responsible for verifying all information independently
             before relying on it. You are also responsible for ensuring that
@@ -151,7 +165,18 @@ export default function DisclaimerPage() {
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>13. Changes</h2>
+          <h2 style={styles.heading}>14. Governing law and jurisdiction</h2>
+          <p style={styles.text}>
+            To the maximum extent permitted by applicable law, this disclaimer
+            and all disputes, claims, controversies, or legal proceedings arising
+            from or related to the use of this website are governed by the laws
+            of Switzerland and shall be resolved exclusively in the competent
+            courts of Switzerland.
+          </p>
+        </section>
+
+        <section style={styles.section}>
+          <h2 style={styles.heading}>15. Changes</h2>
           <p style={styles.text}>
             This disclaimer may be updated at any time without prior notice. The
             version published on this website at the time of use applies.
