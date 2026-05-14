@@ -202,10 +202,11 @@ const styles = {
   },
 
   footer: {
-    marginTop: "28px",
-    textAlign: "center",
-    fontSize: "13px",
-    color: "#64748b",
-    lineHeight: 1.5,
-  },
+  marginTop: "28px",
+  textAlign: "center",
+  fontSize: "13px",
+  color: "#dc2626",
+  lineHeight: 1.5,
+  fontWeight: "600",
+},
 };
