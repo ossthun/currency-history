@@ -90,11 +90,11 @@ const translations = {
 
     feesTitle: "Gebührenrechner",
     feesText:
-      "Sehen, wie Verwaltungsgebühren langfristige Renditen reduzieren können.",
+      "Sehe, wie Verwaltungsgebühren langfristige Renditen reduzieren können.",
 
     fireTitle: "FIRE-Rechner",
     fireText:
-      "Schätzen, wann deine Anlagen finanzielle Unabhängigkeit erreichen könnten.",
+      "Schätze, wann deine Anlagen finanzielle Unabhängigkeit erreichen könnten.",
 
     loanTitle: "Kreditrechner",
     loanText: "Kreditraten, Zinskosten und Rückzahlungspläne schätzen.",
@@ -105,10 +105,10 @@ const translations = {
 
     retirementTitle: "Rentenrechner",
     retirementText:
-      "Schätzen, ob deine Ersparnisse deine Rentenziele unterstützen können.",
+      "Schätze, ob deine Ersparnisse deine Rentenziele unterstützen können.",
 
     inflationTitle: "Inflationsrechner",
-    inflationText: "Sehen, wie sich die Kaufkraft im Laufe der Zeit verändert.",
+    inflationText: "Sehe, wie sich die Kaufkraft im Laufe der Zeit verändert.",
   },
 
   fr: {
