@@ -146,8 +146,7 @@ export default function TermsPage() {
             To the maximum extent permitted by applicable law, these Terms of Use
             and all disputes, claims, controversies, or legal proceedings arising
             from or related to the use of this website are governed by the laws
-            of Switzerland. Mandatory consumer-protection rules in your place of
-            residence may still apply where legally required.
+            of Switzerland.
           </p>
         </section>
 
@@ -158,6 +157,15 @@ export default function TermsPage() {
             claims, controversies, and legal proceedings arising from or related
             to the use of this website shall be resolved exclusively in the
             competent courts of Switzerland.
+          </p>
+        </section>
+
+        <section style={styles.section}>
+          <h2 style={styles.heading}>Contact</h2>
+
+          <p style={styles.text}>
+            Questions regarding this website, these legal notices, or related
+            matters may be sent to: fintool-kit@proton.me
           </p>
         </section>
 
