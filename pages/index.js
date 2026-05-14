@@ -164,8 +164,10 @@ export default function Home() {
         {error && <div style={styles.error}>{error}</div>}
 
         <div style={styles.footer}>
-          Exchange rates provided by Frankfurter API.
-        </div>
+  Exchange rates provided by Frankfurter API.
+  <br />
+  This website is not officially affiliated with Frankfurter or the European Central Bank (ECB).
+</div>
       </div>
     </main>
   );
