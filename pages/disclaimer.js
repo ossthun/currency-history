@@ -129,7 +129,10 @@ export default function DisclaimerPage() {
         </section>
 
         <section style={styles.section}>
-          <h2 style={styles.heading}>11. External links, affiliates, and advertisements</h2>
+          <h2 style={styles.heading}>
+            11. External links, affiliates, and advertisements
+          </h2>
+
           <p style={styles.text}>
             This website may contain links to external websites, third-party
             services, affiliate links, advertisements, sponsored content, or
@@ -180,6 +183,15 @@ export default function DisclaimerPage() {
           <p style={styles.text}>
             This disclaimer may be updated at any time without prior notice. The
             version published on this website at the time of use applies.
+          </p>
+        </section>
+
+        <section style={styles.section}>
+          <h2 style={styles.heading}>Contact</h2>
+
+          <p style={styles.text}>
+            Questions regarding this website, these legal notices, or related
+            matters may be sent to: fintool-kit@proton.me
           </p>
         </section>
 
