@@ -5,7 +5,7 @@ const currencies = ["CHF", "EUR", "USD", "GBP", "JPY", "AUD", "CAD", "SEK", "NOK
 export default function Home() {
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("CHF");
-  const [date, setDate] = useState("15.01.2024");
+  const [date, setDate] = useState("");
 
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
@@ -29,6 +29,10 @@ export default function Home() {
     setResult(null);
 
     try {
+      if (!currentDate.trim()) {
+        throw new Error("Please enter a date.");
+      }
+
       if (currentFrom === currentTo) {
         throw new Error("Please choose two different currencies.");
       }
