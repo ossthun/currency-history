@@ -1,6 +1,17 @@
 import { useState } from "react";
 
-const currencies = ["CHF", "EUR", "USD", "GBP", "JPY", "AUD", "CAD", "SEK", "NOK", "DKK"];
+const currencies = [
+  { code: "CHF", name: "Swiss Franc", flag: "🇨🇭" },
+  { code: "EUR", name: "Euro", flag: "🇪🇺" },
+  { code: "USD", name: "US Dollar", flag: "🇺🇸" },
+  { code: "GBP", name: "British Pound", flag: "🇬🇧" },
+  { code: "JPY", name: "Japanese Yen", flag: "🇯🇵" },
+  { code: "AUD", name: "Australian Dollar", flag: "🇦🇺" },
+  { code: "CAD", name: "Canadian Dollar", flag: "🇨🇦" },
+  { code: "SEK", name: "Swedish Krona", flag: "🇸🇪" },
+  { code: "NOK", name: "Norwegian Krone", flag: "🇳🇴" },
+  { code: "DKK", name: "Danish Krone", flag: "🇩🇰" },
+];
 
 export default function Home() {
   const [from, setFrom] = useState("USD");
@@ -88,73 +99,72 @@ export default function Home() {
     }
   }
 
+  function getCurrencyLabel(currency) {
+    return `${currency.flag}  ${currency.code} — ${currency.name}`;
+  }
+
   return (
     <main style={styles.page}>
       <div style={styles.card}>
-        <h1 style={styles.title}>Historical Currency Converter</h1>
+        <div style={styles.badge}>Historical FX Rate</div>
 
-        <label style={styles.label}>Currency 1</label>
+        <h1 style={styles.title}>Currency Converter</h1>
 
-        <select
-          value={from}
-          onChange={handleFromChange}
-          style={styles.input}
-        >
-          {currencies.map((currency) => (
-            <option key={currency} value={currency}>
-              {currency}
-            </option>
-          ))}
-        </select>
+        <p style={styles.subtitle}>
+          Choose two currencies, type a date, then press Enter.
+        </p>
 
-        <label style={styles.label}>Currency 2</label>
+        <div style={styles.fieldGroup}>
+          <label style={styles.label}>Currency 1</label>
+          <select value={from} onChange={handleFromChange} style={styles.input}>
+            {currencies.map((currency) => (
+              <option key={currency.code} value={currency.code}>
+                {getCurrencyLabel(currency)}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <select
-          value={to}
-          onChange={handleToChange}
-          style={styles.input}
-        >
-          {currencies.map((currency) => (
-            <option key={currency} value={currency}>
-              {currency}
-            </option>
-          ))}
-        </select>
+        <div style={styles.fieldGroup}>
+          <label style={styles.label}>Currency 2</label>
+          <select value={to} onChange={handleToChange} style={styles.input}>
+            {currencies.map((currency) => (
+              <option key={currency.code} value={currency.code}>
+                {getCurrencyLabel(currency)}
+              </option>
+            ))}
+          </select>
+        </div>
 
-        <label style={styles.label}>Date</label>
+        <div style={styles.fieldGroup}>
+          <label style={styles.label}>Date</label>
+          <input
+            type="text"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            onKeyDown={handleDateKeyDown}
+            placeholder="dd.mm.yyyy"
+            style={styles.input}
+          />
+        </div>
 
-        <input
-          type="text"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          onKeyDown={handleDateKeyDown}
-          placeholder="dd.mm.yyyy"
-          style={styles.input}
-        />
-
-        {loading && (
-          <div style={styles.loading}>
-            Loading...
-          </div>
-        )}
+        {loading && <div style={styles.loading}>Loading exchange rate...</div>}
 
         {result && (
           <div style={styles.result}>
-            <div>
-              1 {from} = <strong>{result.rate}</strong> {to}
+            <div style={styles.resultTop}>
+              1 {from} =
             </div>
 
-            <div style={styles.small}>
-              Date used: {result.date}
+            <div style={styles.resultRate}>
+              {result.rate} {to}
             </div>
+
+            <div style={styles.small}>Date used: {result.date}</div>
           </div>
         )}
 
-        {error && (
-          <div style={styles.error}>
-            {error}
-          </div>
-        )}
+        {error && <div style={styles.error}>{error}</div>}
       </div>
     </main>
   );
@@ -167,66 +177,121 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    background: "#f4f4f5",
-    fontFamily: "Arial, sans-serif",
+    background:
+      "linear-gradient(135deg, #e0f2fe 0%, #f8fafc 45%, #ecfdf5 100%)",
+    fontFamily:
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif",
     padding: "20px",
   },
 
   card: {
     width: "100%",
-    maxWidth: "420px",
-    background: "white",
-    padding: "32px",
-    borderRadius: "16px",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+    maxWidth: "460px",
+    background: "rgba(255, 255, 255, 0.92)",
+    padding: "34px",
+    borderRadius: "24px",
+    boxShadow: "0 24px 70px rgba(15, 23, 42, 0.14)",
+    border: "1px solid rgba(255, 255, 255, 0.8)",
+  },
+
+  badge: {
+    display: "inline-block",
+    padding: "6px 12px",
+    borderRadius: "999px",
+    background: "#e0f2fe",
+    color: "#0369a1",
+    fontSize: "13px",
+    fontWeight: "700",
+    marginBottom: "16px",
   },
 
   title: {
-    textAlign: "center",
-    marginBottom: "24px",
+    margin: 0,
+    fontSize: "32px",
+    letterSpacing: "-0.04em",
+    color: "#0f172a",
+  },
+
+  subtitle: {
+    marginTop: "10px",
+    marginBottom: "26px",
+    color: "#64748b",
+    fontSize: "15px",
+    lineHeight: 1.5,
+  },
+
+  fieldGroup: {
+    marginTop: "16px",
   },
 
   label: {
     display: "block",
-    marginTop: "16px",
     marginBottom: "8px",
-    fontWeight: "bold",
+    fontSize: "14px",
+    fontWeight: "700",
+    color: "#334155",
   },
 
   input: {
     width: "100%",
-    padding: "12px",
-    borderRadius: "8px",
-    border: "1px solid #ccc",
+    height: "52px",
+    padding: "0 14px",
+    borderRadius: "14px",
+    border: "1px solid #cbd5e1",
+    background: "#ffffff",
     fontSize: "16px",
+    color: "#0f172a",
     boxSizing: "border-box",
+    outline: "none",
   },
 
   loading: {
     marginTop: "24px",
+    padding: "14px",
+    borderRadius: "14px",
+    background: "#f8fafc",
+    color: "#475569",
     textAlign: "center",
-    fontWeight: "bold",
+    fontWeight: "700",
   },
 
   result: {
     marginTop: "24px",
-    padding: "16px",
-    borderRadius: "8px",
-    background: "#ecfdf5",
+    padding: "22px",
+    borderRadius: "18px",
+    background: "linear-gradient(135deg, #dcfce7 0%, #ecfdf5 100%)",
     textAlign: "center",
+    border: "1px solid #bbf7d0",
+  },
+
+  resultTop: {
+    color: "#166534",
+    fontSize: "15px",
+    fontWeight: "700",
+  },
+
+  resultRate: {
+    marginTop: "6px",
+    color: "#14532d",
+    fontSize: "30px",
+    fontWeight: "800",
+    letterSpacing: "-0.03em",
   },
 
   small: {
-    marginTop: "8px",
+    marginTop: "10px",
     fontSize: "14px",
+    color: "#166534",
   },
 
   error: {
     marginTop: "24px",
     padding: "16px",
-    borderRadius: "8px",
+    borderRadius: "14px",
     background: "#fee2e2",
     color: "#991b1b",
     textAlign: "center",
+    fontWeight: "700",
+    border: "1px solid #fecaca",
   },
 };
