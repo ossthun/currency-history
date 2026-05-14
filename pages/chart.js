@@ -95,22 +95,48 @@ export default function ChartPage() {
     return `${currency.flag}  ${currency.code} — ${currency.name}`;
   }
 
+  const width = 700;
+  const height = 360;
+  const paddingLeft = 70;
+  const paddingRight = 20;
+  const paddingTop = 30;
+  const paddingBottom = 55;
+
+  const chartWidth = width - paddingLeft - paddingRight;
+  const chartHeight = height - paddingTop - paddingBottom;
+
   const min = points.length ? Math.min(...points.map((p) => p.value)) : 0;
   const max = points.length ? Math.max(...points.map((p) => p.value)) : 0;
+  const range = max - min || 1;
+
+  const yTicks = Array.from({ length: 5 }, (_, index) => {
+    return min + (range / 4) * index;
+  }).reverse();
+
+  const xTicks = points.length
+    ? [
+        points[0],
+        points[Math.floor(points.length / 2)],
+        points[points.length - 1],
+      ]
+    : [];
 
   const svgPoints =
     points.length > 1
       ? points
           .map((point, index) => {
-            const x = (index / (points.length - 1)) * 600;
-            const y =
-              220 -
-              ((point.value - min) / (max - min || 1)) * 180;
+            const x = paddingLeft + (index / (points.length - 1)) * chartWidth;
+            const y = paddingTop + ((max - point.value) / range) * chartHeight;
 
             return `${x},${y}`;
           })
           .join(" ")
       : "";
+
+  function formatShortDate(dateString) {
+    const [year, month, day] = dateString.split("-");
+    return `${day}.${month}.${year.slice(2)}`;
+  }
 
   return (
     <main style={styles.page}>
@@ -183,7 +209,85 @@ export default function ChartPage() {
               1 {from} to {to}
             </div>
 
-            <svg viewBox="0 0 600 240" style={styles.chart}>
+            <svg viewBox={`0 0 ${width} ${height}`} style={styles.chart}>
+              {yTicks.map((tick) => {
+                const y = paddingTop + ((max - tick) / range) * chartHeight;
+
+                return (
+                  <g key={tick}>
+                    <line
+                      x1={paddingLeft}
+                      x2={width - paddingRight}
+                      y1={y}
+                      y2={y}
+                      stroke="#d1fae5"
+                      strokeWidth="1"
+                    />
+                    <text
+                      x={paddingLeft - 12}
+                      y={y + 4}
+                      textAnchor="end"
+                      fontSize="13"
+                      fill="#475569"
+                    >
+                      {tick.toFixed(4)}
+                    </text>
+                  </g>
+                );
+              })}
+
+              <line
+                x1={paddingLeft}
+                x2={paddingLeft}
+                y1={paddingTop}
+                y2={height - paddingBottom}
+                stroke="#64748b"
+                strokeWidth="2"
+              />
+
+              <line
+                x1={paddingLeft}
+                x2={width - paddingRight}
+                y1={height - paddingBottom}
+                y2={height - paddingBottom}
+                stroke="#64748b"
+                strokeWidth="2"
+              />
+
+              {xTicks.map((point, index) => {
+                const pointIndex =
+                  index === 0
+                    ? 0
+                    : index === 1
+                    ? Math.floor(points.length / 2)
+                    : points.length - 1;
+
+                const x =
+                  paddingLeft + (pointIndex / (points.length - 1)) * chartWidth;
+
+                return (
+                  <g key={`${point.date}-${index}`}>
+                    <line
+                      x1={x}
+                      x2={x}
+                      y1={paddingTop}
+                      y2={height - paddingBottom}
+                      stroke="#e2e8f0"
+                      strokeWidth="1"
+                    />
+                    <text
+                      x={x}
+                      y={height - 22}
+                      textAnchor="middle"
+                      fontSize="13"
+                      fill="#475569"
+                    >
+                      {formatShortDate(point.date)}
+                    </text>
+                  </g>
+                );
+              })}
+
               <polyline
                 points={svgPoints}
                 fill="none"
@@ -192,6 +296,16 @@ export default function ChartPage() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
+
+              <text
+                x={paddingLeft}
+                y={18}
+                fontSize="13"
+                fill="#166534"
+                fontWeight="700"
+              >
+                Exchange rate
+              </text>
             </svg>
 
             <div style={styles.small}>
@@ -343,7 +457,7 @@ const styles = {
   chart: {
     width: "100%",
     marginTop: "18px",
-    background: "rgba(255, 255, 255, 0.65)",
+    background: "rgba(255, 255, 255, 0.75)",
     borderRadius: "14px",
     padding: "10px",
     boxSizing: "border-box",
