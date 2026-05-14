@@ -5,10 +5,33 @@ const currencies = ["CHF", "EUR", "USD", "GBP", "JPY", "AUD", "CAD", "SEK", "NOK
 export default function Home() {
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("CHF");
-  const [date, setDate] = useState("2024-01-15");
+  const [date, setDate] = useState("15.01.2024");
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  function convertDateToApiFormat(input) {
+    const parts = input.split(".");
+
+    if (parts.length !== 3) {
+      throw new Error("Please enter the date as dd.mm.yyyy.");
+    }
+
+    const [day, month, year] = parts;
+
+    if (
+      day.length !== 2 ||
+      month.length !== 2 ||
+      year.length !== 4 ||
+      isNaN(Number(day)) ||
+      isNaN(Number(month)) ||
+      isNaN(Number(year))
+    ) {
+      throw new Error("Please enter the date as dd.mm.yyyy.");
+    }
+
+    return `${year}-${month}-${day}`;
+  }
 
   async function fetchRate() {
     setLoading(true);
@@ -16,13 +39,19 @@ export default function Home() {
     setResult(null);
 
     try {
+      if (from === to) {
+        throw new Error("Please choose two different currencies.");
+      }
+
+      const apiDate = convertDateToApiFormat(date);
+
       const response = await fetch(
-        `https://api.frankfurter.app/${date}?from=${from}&to=${to}`
+        `https://api.frankfurter.dev/v2/rates?date=${apiDate}&base=${from}&quotes=${to}`
       );
 
       const data = await response.json();
 
-      if (!data.rates || !data.rates[to]) {
+      if (!response.ok || !data.rates || !data.rates[to]) {
         throw new Error("No exchange rate found for this date.");
       }
 
@@ -31,7 +60,7 @@ export default function Home() {
         date: data.date,
       });
     } catch (err) {
-      setError(err.message || "Something went wrong.");
+      setError(err.message || "Load failed.");
     } finally {
       setLoading(false);
     }
@@ -62,9 +91,10 @@ export default function Home() {
 
         <label style={styles.label}>Date</label>
         <input
-          type="date"
+          type="text"
           value={date}
           onChange={(e) => setDate(e.target.value)}
+          placeholder="dd.mm.yyyy"
           style={styles.input}
         />
 
