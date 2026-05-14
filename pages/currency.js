@@ -221,7 +221,7 @@ const styles = {
     border: "1px solid rgba(255, 255, 255, 0.8)",
   },
 
-  backLink: {
+ backLink: {
   display: "inline-flex",
   alignItems: "center",
   gap: "6px",
