@@ -9,7 +9,7 @@ const translations = {
       "How a tax declaration turned into a collection of educational financial tools.",
     heading1: "From taxes to tools",
     text1:
-      "The creator of this website is a teacher in the Canton of Berne, Switzerland. Originally, he developed the historical currency converter for a practical reason: preparing a strenuous and time-consuming tax declaration. Calculating historical exchange rates for foreign dividends, stock purchases, and transactions quickly became repetitive and frustrating. To simplify the process, he built a small tool that could look up historical currency conversions in seconds.",
+      "The creator of this website is a teacher in the Canton of Berne, Switzerland. Originally, he developed the historical currency converter for a practical reason: preparing a strenuous and time-consuming tax declaration. To simplify the process, he built a small tool that could look up historical currency conversions in seconds.",
     heading2: "Discovering the educational value",
     text2:
       "While building the converter, he realized that financial topics become much easier to understand when people can experiment with interactive tools instead of only reading theory. A compound-interest chart can explain long-term investing more clearly than a textbook paragraph. A fee calculator can visually show how small annual costs may grow into large losses over decades. An inflation calculator can make the concept of purchasing power immediately understandable.",
@@ -31,7 +31,7 @@ const translations = {
       "Wie aus einer Steuererklärung eine Sammlung von Finanztools entstand.",
     heading1: "Von Steuern zu Tools",
     text1:
-      "Der Ersteller dieser Website ist Lehrer im Kanton Bern in der Schweiz. Ursprünglich entwickelte er den historischen Währungsrechner aus einem praktischen Grund: einer anstrengenden und zeitaufwendigen Steuererklärung. Historische Wechselkurse für ausländische Dividenden, Aktienkäufe und Transaktionen zu berechnen wurde schnell mühsam und repetitiv. Um diesen Prozess zu vereinfachen, entwickelte er ein kleines Tool, das historische Währungsumrechnungen innerhalb von Sekunden anzeigen konnte.",
+      "Der Ersteller dieser Website ist Lehrer im Kanton Bern in der Schweiz. Ursprünglich entwickelte er den historischen Währungsrechner aus einem praktischen Grund: einer anstrengenden und zeitaufwendigen Steuererklärung. Um diesen Prozess zu vereinfachen, entwickelte er ein kleines Tool, das historische Währungsumrechnungen innerhalb von Sekunden anzeigen konnte.",
     heading2: "Der pädagogische Wert",
     text2:
       "Während der Entwicklung des Rechners stellte er fest, dass Finanzthemen viel einfacher verständlich werden, wenn Menschen mit interaktiven Tools experimentieren können, statt nur Theorie zu lesen. Ein Zinseszins-Diagramm kann langfristiges Investieren klarer erklären als ein Lehrbuchabschnitt. Ein Gebührenrechner zeigt visuell, wie kleine jährliche Kosten über Jahrzehnte grosse Auswirkungen haben können. Ein Inflationsrechner macht Kaufkraft sofort verständlich.",
@@ -53,7 +53,7 @@ const translations = {
       "Comment une déclaration d’impôts est devenue une collection d’outils financiers éducatifs.",
     heading1: "Des impôts aux outils",
     text1:
-      "Le créateur de ce site est enseignant dans le canton de Berne, en Suisse. À l’origine, il a développé le convertisseur de devises historique pour une raison pratique : préparer une déclaration d’impôts longue et fatigante. Calculer les taux de change historiques pour des dividendes étrangers, des achats d’actions et d’autres transactions devenait rapidement répétitif et frustrant. Pour simplifier ce travail, il a créé un petit outil capable d’afficher des conversions historiques en quelques secondes.",
+      "Le créateur de ce site est enseignant dans le canton de Berne, en Suisse. À l’origine, il a développé le convertisseur de devises historique pour une raison pratique : préparer une déclaration d’impôts longue et fatigante. Pour simplifier ce travail, il a créé un petit outil capable d’afficher des conversions historiques en quelques secondes.",
     heading2: "Découvrir la valeur éducative",
     text2:
       "En développant ce convertisseur, il a réalisé que les sujets financiers deviennent beaucoup plus compréhensibles lorsque les gens peuvent expérimenter avec des outils interactifs au lieu de seulement lire de la théorie. Un graphique d’intérêts composés peut expliquer l’investissement à long terme plus clairement qu’un manuel. Un calculateur de frais peut montrer visuellement comment de petits coûts annuels deviennent importants sur plusieurs décennies.",
