@@ -10,6 +10,7 @@ const translations = {
     disclaimer: "Disclaimer",
     terms: "Terms",
     privacy: "Privacy",
+    about: "About",
 
     currencyTitle: "Currency Converter",
     currencyText: "Look up historical exchange rates by currency and date.",
@@ -62,6 +63,7 @@ const translations = {
     disclaimer: "Haftungsausschluss",
     terms: "Nutzungsbedingungen",
     privacy: "Datenschutz",
+    about: "Über",
 
     currencyTitle: "Währungsrechner",
     currencyText:
@@ -88,15 +90,14 @@ const translations = {
 
     feesTitle: "Gebührenrechner",
     feesText:
-      "Sehe, wie Verwaltungsgebühren langfristige Renditen reduzieren können.",
+      "Sehen, wie Verwaltungsgebühren langfristige Renditen reduzieren können.",
 
     fireTitle: "FIRE-Rechner",
     fireText:
-      "Schätze, wann deine Anlagen finanzielle Unabhängigkeit erreichen könnten.",
+      "Schätzen, wann deine Anlagen finanzielle Unabhängigkeit erreichen könnten.",
 
     loanTitle: "Kreditrechner",
-    loanText:
-      "Kreditraten, Zinskosten und Rückzahlungspläne schätzen.",
+    loanText: "Kreditraten, Zinskosten und Rückzahlungspläne schätzen.",
 
     mortgageTitle: "Hypothekenrechner",
     mortgageText:
@@ -104,10 +105,10 @@ const translations = {
 
     retirementTitle: "Rentenrechner",
     retirementText:
-      "Schätze, ob deine Ersparnisse deine Rentenziele unterstützen können.",
+      "Schätzen, ob deine Ersparnisse deine Rentenziele unterstützen können.",
 
     inflationTitle: "Inflationsrechner",
-    inflationText: "Sehe, wie sich die Kaufkraft im Laufe der Zeit verändert.",
+    inflationText: "Sehen, wie sich die Kaufkraft im Laufe der Zeit verändert.",
   },
 
   fr: {
@@ -119,6 +120,7 @@ const translations = {
     disclaimer: "Avertissement",
     terms: "Conditions",
     privacy: "Confidentialité",
+    about: "À propos",
 
     currencyTitle: "Convertisseur de devises",
     currencyText:
@@ -177,6 +179,7 @@ const translations = {
     disclaimer: "Disclaimer",
     terms: "Termini",
     privacy: "Privacy",
+    about: "Informazioni",
 
     currencyTitle: "Convertitore di valuta",
     currencyText: "Consulta tassi di cambio storici per valuta e data.",
@@ -209,20 +212,17 @@ const translations = {
       "Stima quando i tuoi investimenti potrebbero raggiungere l’indipendenza finanziaria.",
 
     loanTitle: "Calcolatore prestito",
-    loanText:
-      "Stima pagamenti, costi degli interessi e piano di rimborso.",
+    loanText: "Stima pagamenti, costi degli interessi e piano di rimborso.",
 
     mortgageTitle: "Calcolatore mutuo",
-    mortgageText:
-      "Stima rate mensili, interessi totali e percorso di rimborso.",
+    mortgageText: "Stima rate mensili, interessi totali e percorso di rimborso.",
 
     retirementTitle: "Calcolatore pensione",
     retirementText:
       "Stima se i tuoi risparmi possono sostenere i tuoi obiettivi pensionistici.",
 
     inflationTitle: "Calcolatore inflazione",
-    inflationText:
-      "Scopri come il potere d’acquisto cambia nel tempo.",
+    inflationText: "Scopri come il potere d’acquisto cambia nel tempo.",
   },
 
   es: {
@@ -234,10 +234,10 @@ const translations = {
     disclaimer: "Aviso legal",
     terms: "Términos",
     privacy: "Privacidad",
+    about: "Acerca de",
 
     currencyTitle: "Conversor de divisas",
-    currencyText:
-      "Consulta tipos de cambio históricos por divisa y fecha.",
+    currencyText: "Consulta tipos de cambio históricos por divisa y fecha.",
 
     chartTitle: "Gráfico de divisas",
     chartText:
@@ -267,20 +267,17 @@ const translations = {
       "Estima cuándo tus inversiones podrían alcanzar la independencia financiera.",
 
     loanTitle: "Calculadora de préstamos",
-    loanText:
-      "Estima pagos, costes de interés y calendarios de amortización.",
+    loanText: "Estima pagos, costes de interés y calendarios de amortización.",
 
     mortgageTitle: "Calculadora hipotecaria",
-    mortgageText:
-      "Estima pagos mensuales, intereses totales y plazo de amortización.",
+    mortgageText: "Estima pagos mensuales, intereses totales y plazo de amortización.",
 
     retirementTitle: "Calculadora de jubilación",
     retirementText:
       "Estima si tus ahorros pueden sostener tus objetivos de jubilación.",
 
     inflationTitle: "Calculadora de inflación",
-    inflationText:
-      "Ve cómo cambia el poder adquisitivo con el tiempo.",
+    inflationText: "Ve cómo cambia el poder adquisitivo con el tiempo.",
   },
 
   pt: {
@@ -292,14 +289,13 @@ const translations = {
     disclaimer: "Aviso legal",
     terms: "Termos",
     privacy: "Privacidade",
+    about: "Sobre",
 
     currencyTitle: "Conversor de moedas",
-    currencyText:
-      "Consulte taxas de câmbio históricas por moeda e data.",
+    currencyText: "Consulte taxas de câmbio históricas por moeda e data.",
 
     chartTitle: "Gráfico de moedas",
-    chartText:
-      "Veja tendências históricas de câmbio em um intervalo de datas.",
+    chartText: "Veja tendências históricas de câmbio em um intervalo de datas.",
 
     stockTitle: "Consulta de ações",
     stockText: "Consulte preços históricos de ações por ticker e data.",
@@ -325,20 +321,17 @@ const translations = {
       "Estime quando seus investimentos podem atingir independência financeira.",
 
     loanTitle: "Calculadora de empréstimo",
-    loanText:
-      "Estime pagamentos, custos de juros e cronogramas de pagamento.",
+    loanText: "Estime pagamentos, custos de juros e cronogramas de pagamento.",
 
     mortgageTitle: "Calculadora de hipoteca",
-    mortgageText:
-      "Estime pagamentos mensais, juros totais e cronograma de quitação.",
+    mortgageText: "Estime pagamentos mensais, juros totais e cronograma de quitação.",
 
     retirementTitle: "Calculadora de aposentadoria",
     retirementText:
       "Estime se suas economias podem sustentar seus objetivos de aposentadoria.",
 
     inflationTitle: "Calculadora de inflação",
-    inflationText:
-      "Veja como o poder de compra muda ao longo do tempo.",
+    inflationText: "Veja como o poder de compra muda ao longo do tempo.",
   },
 };
 
@@ -462,6 +455,10 @@ export default function Home() {
             <span style={styles.separator}>·</span>
             <a href="/privacy" style={styles.legalLink}>
               {t.privacy}
+            </a>
+            <span style={styles.separator}>·</span>
+            <a href="/about" style={styles.legalLink}>
+              {t.about}
             </a>
           </div>
         </div>
