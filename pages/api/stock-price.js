@@ -6,10 +6,10 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Missing ticker or date." });
     }
 
-    const cleanTicker = String(ticker).trim().toLowerCase();
+    const cleanTicker = String(ticker).trim().toUpperCase();
     const cleanDate = String(date).trim();
 
-    if (!/^[a-z0-9.^-]+$/i.test(cleanTicker)) {
+    if (!/^[A-Z0-9.^=-]+$/.test(cleanTicker)) {
       return res.status(400).json({ error: "Invalid ticker format." });
     }
 
@@ -17,64 +17,61 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Invalid date format." });
     }
 
-    const requested = new Date(`${cleanDate}T00:00:00Z`);
-    const start = new Date(requested);
-    start.setUTCDate(start.getUTCDate() - 14);
+    const requestedDate = new Date(`${cleanDate}T00:00:00Z`);
+    const startDate = new Date(requestedDate);
+    startDate.setUTCDate(startDate.getUTCDate() - 14);
 
-    const formatForStooq = (d) =>
-      `${d.getUTCFullYear()}${String(d.getUTCMonth() + 1).padStart(2, "0")}${String(
-        d.getUTCDate()
-      ).padStart(2, "0")}`;
+    const endDate = new Date(requestedDate);
+    endDate.setUTCDate(endDate.getUTCDate() + 1);
 
-    const d1 = formatForStooq(start);
-    const d2 = formatForStooq(requested);
+    const period1 = Math.floor(startDate.getTime() / 1000);
+    const period2 = Math.floor(endDate.getTime() / 1000);
 
-    const url = `https://stooq.com/q/d/l/?s=${encodeURIComponent(
+    const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(
       cleanTicker
-    )}&d1=${d1}&d2=${d2}&i=d`;
+    )}?period1=${period1}&period2=${period2}&interval=1d`;
 
-    const response = await fetch(url);
+    const response = await fetch(yahooUrl);
 
     if (!response.ok) {
       return res.status(502).json({ error: "Could not load stock data." });
     }
 
-    const csv = await response.text();
+    const data = await response.json();
 
-    const lines = csv
-      .trim()
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter(Boolean);
+    const chart = data.chart;
 
-    if (lines.length < 2 || !lines[0].toLowerCase().startsWith("date,")) {
+    if (!chart || chart.error) {
+      return res.status(404).json({
+        error: chart?.error?.description || "No stock data found.",
+      });
+    }
+
+    const result = chart.result?.[0];
+
+    if (!result || !result.timestamp || !result.indicators?.quote?.[0]) {
       return res.status(404).json({
         error: "No valid price history found for this ticker.",
       });
     }
 
-    const rows = lines
-      .slice(1)
-      .map((line) => {
-        const [rowDate, open, high, low, close, volume] = line.split(",");
+    const quote = result.indicators.quote[0];
+
+    const rows = result.timestamp
+      .map((timestamp, index) => {
+        const rowDate = new Date(timestamp * 1000).toISOString().slice(0, 10);
 
         return {
           date: rowDate,
-          open,
-          high,
-          low,
-          close,
-          volume,
+          open: quote.open?.[index],
+          high: quote.high?.[index],
+          low: quote.low?.[index],
+          close: quote.close?.[index],
+          volume: quote.volume?.[index],
         };
       })
       .filter((row) => {
-        return (
-          /^\d{4}-\d{2}-\d{2}$/.test(row.date) &&
-          row.open &&
-          row.high &&
-          row.low &&
-          row.close
-        );
+        return row.date && row.close !== null && row.close !== undefined;
       });
 
     if (rows.length === 0) {
@@ -95,14 +92,23 @@ export default async function handler(req, res) {
     }
 
     return res.status(200).json({
-      ticker: cleanTicker.toUpperCase(),
+      ticker: cleanTicker,
       requestedDate: cleanDate,
       usedDate: selectedRow.date,
-      close: selectedRow.close,
-      open: selectedRow.open,
-      high: selectedRow.high,
-      low: selectedRow.low,
-      volume: selectedRow.volume,
+      close: Number(selectedRow.close).toFixed(2),
+      open:
+        selectedRow.open !== null && selectedRow.open !== undefined
+          ? Number(selectedRow.open).toFixed(2)
+          : "n/a",
+      high:
+        selectedRow.high !== null && selectedRow.high !== undefined
+          ? Number(selectedRow.high).toFixed(2)
+          : "n/a",
+      low:
+        selectedRow.low !== null && selectedRow.low !== undefined
+          ? Number(selectedRow.low).toFixed(2)
+          : "n/a",
+      volume: selectedRow.volume ?? "n/a",
       exact: selectedRow.date === cleanDate,
     });
   } catch (error) {
