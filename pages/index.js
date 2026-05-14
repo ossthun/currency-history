@@ -49,11 +49,27 @@ export default function Home() {
             </p>
           </a>
 
+          <a href="/fees" style={styles.option}>
+            <div style={styles.icon}>💸</div>
+            <h2 style={styles.optionTitle}>Investment Fee Calculator</h2>
+            <p style={styles.optionText}>
+              See how management fees can reduce long-term returns.
+            </p>
+          </a>
+
           <a href="/inflation" style={styles.option}>
             <div style={styles.icon}>🛒</div>
             <h2 style={styles.optionTitle}>Inflation Calculator</h2>
             <p style={styles.optionText}>
               See how purchasing power changes over time.
+            </p>
+          </a>
+
+          <a href="/loan" style={styles.option}>
+            <div style={styles.icon}>💵</div>
+            <h2 style={styles.optionTitle}>Loan Calculator</h2>
+            <p style={styles.optionText}>
+              Estimate loan payments, interest costs, and repayment schedules.
             </p>
           </a>
 
@@ -70,6 +86,14 @@ export default function Home() {
             <h2 style={styles.optionTitle}>Retirement Calculator</h2>
             <p style={styles.optionText}>
               Estimate whether your savings can support your retirement goals.
+            </p>
+          </a>
+
+          <a href="/crypto" style={styles.option}>
+            <div style={styles.icon}>🪙</div>
+            <h2 style={styles.optionTitle}>Crypto Profit Calculator</h2>
+            <p style={styles.optionText}>
+              Estimate cryptocurrency gains, losses, and fees.
             </p>
           </a>
         </div>
