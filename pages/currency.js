@@ -212,48 +212,60 @@ export default function CurrencyPage() {
   }
 
   async function fetchRate() {
-    setLoading(true);
-    setError("");
-    setRate(null);
-    setUsedDate("");
+  setLoading(true);
+  setError("");
+  setRate(null);
+  setUsedDate("");
 
-    try {
-      if (!date.trim()) {
-        throw new Error(t.enterDate);
+  try {
+    if (!date.trim()) throw new Error(t.enterDate);
+    if (from === to) throw new Error(t.sameCurrency);
+
+    const apiDate = convertDateToApiFormat(date);
+
+    const urls = [
+      `https://api.frankfurter.app/${apiDate}?from=${from}&to=${to}`,
+      `https://api.frankfurter.dev/v1/${apiDate}?from=${from}&to=${to}`,
+    ];
+
+    let data = null;
+    let lastError = "";
+
+    for (const url of urls) {
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+
+        if (!response.ok) {
+          lastError = text || response.statusText;
+          continue;
+        }
+
+        data = JSON.parse(text);
+        break;
+      } catch (err) {
+        lastError = err.message;
       }
-
-      if (from === to) {
-        throw new Error(t.sameCurrency);
-      }
-
-      const apiDate = convertDateToApiFormat(date);
-
-      const response = await fetch(
-        `https://api.frankfurter.app/${apiDate}?from=${encodeURIComponent(
-          from
-        )}&to=${encodeURIComponent(to)}`
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(t.loadFailed);
-      }
-
-      const foundRate = data?.rates?.[to];
-
-      if (!foundRate) {
-        throw new Error(t.noRate);
-      }
-
-      setRate(foundRate);
-      setUsedDate(data.date || apiDate);
-    } catch (err) {
-      setError(err.message || t.loadFailed);
-    } finally {
-      setLoading(false);
     }
+
+    if (!data) {
+      throw new Error(lastError || t.loadFailed);
+    }
+
+    const foundRate = data?.rates?.[to];
+
+    if (!foundRate) {
+      throw new Error(t.noRate);
+    }
+
+    setRate(foundRate);
+    setUsedDate(data.date || apiDate);
+  } catch (err) {
+    setError(err.message || t.loadFailed);
+  } finally {
+    setLoading(false);
   }
+}
 
   function handleKeyDown(e) {
     if (e.key === "Enter") {
