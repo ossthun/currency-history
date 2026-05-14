@@ -169,8 +169,7 @@ export default function PrivacyPage() {
           <h2 style={styles.heading}>16. Contact</h2>
           <p style={styles.text}>
             If you have privacy-related questions, requests, or concerns, please
-            contact the website operator using the contact information provided
-            on the website.
+            contact the website operator using this address: fintool-kit@)proton.me
           </p>
         </section>
 
