@@ -16,7 +16,13 @@ export default function StockPage() {
     }
 
     const [, day, month, year] = match;
-    return `${year}-${month}-${day}`;
+
+    return {
+      apiDate: `${year}-${month}-${day}`,
+      year: Number(year),
+      month: Number(month),
+      day: Number(day),
+    };
   }
 
   async function fetchStockPrice() {
@@ -33,21 +39,103 @@ export default function StockPage() {
         throw new Error("Please enter a date.");
       }
 
-      const apiDate = convertDateToApiFormat(date);
+      const parsed = convertDateToApiFormat(date);
+      const apiDate = parsed.apiDate;
 
-      const response = await fetch(
-        `/api/stock-price?ticker=${encodeURIComponent(
-          ticker
-        )}&date=${encodeURIComponent(apiDate)}`
+      const requestedDate = new Date(
+        Date.UTC(parsed.year, parsed.month - 1, parsed.day)
       );
 
-      const data = await response.json();
+      const startDate = new Date(requestedDate);
+      startDate.setUTCDate(startDate.getUTCDate() - 14);
+
+      const endDate = new Date(requestedDate);
+      endDate.setUTCDate(endDate.getUTCDate() + 1);
+
+      const period1 = Math.floor(startDate.getTime() / 1000);
+      const period2 = Math.floor(endDate.getTime() / 1000);
+
+      const url =
+        `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(
+          ticker.trim().toUpperCase()
+        )}` +
+        `?period1=${period1}` +
+        `&period2=${period2}` +
+        `&interval=1d`;
+
+      const response = await fetch(url);
 
       if (!response.ok) {
-        throw new Error(data.error || "Could not load stock price.");
+        throw new Error("Could not load stock data.");
       }
 
-      setResult(data);
+      const data = await response.json();
+      const chart = data.chart;
+
+      if (!chart || chart.error) {
+        throw new Error(chart?.error?.description || "No stock data found.");
+      }
+
+      const resultData = chart.result?.[0];
+
+      if (
+        !resultData ||
+        !resultData.timestamp ||
+        !resultData.indicators?.quote?.[0]
+      ) {
+        throw new Error("No historical stock data found.");
+      }
+
+      const quote = resultData.indicators.quote[0];
+
+      const rows = resultData.timestamp
+        .map((timestamp, index) => {
+          const rowDate = new Date(timestamp * 1000).toISOString().slice(0, 10);
+
+          return {
+            date: rowDate,
+            open: quote.open?.[index],
+            high: quote.high?.[index],
+            low: quote.low?.[index],
+            close: quote.close?.[index],
+            volume: quote.volume?.[index],
+          };
+        })
+        .filter((row) => row.close !== null && row.close !== undefined);
+
+      if (rows.length === 0) {
+        throw new Error("No valid trading data found.");
+      }
+
+      const exactMatch = rows.find((row) => row.date === apiDate);
+
+      const selectedRow =
+        exactMatch || rows.filter((row) => row.date < apiDate).at(-1);
+
+      if (!selectedRow) {
+        throw new Error("No earlier trading day found.");
+      }
+
+      setResult({
+        ticker: ticker.trim().toUpperCase(),
+        requestedDate: apiDate,
+        usedDate: selectedRow.date,
+        close: Number(selectedRow.close).toFixed(2),
+        open:
+          selectedRow.open !== null && selectedRow.open !== undefined
+            ? Number(selectedRow.open).toFixed(2)
+            : "n/a",
+        high:
+          selectedRow.high !== null && selectedRow.high !== undefined
+            ? Number(selectedRow.high).toFixed(2)
+            : "n/a",
+        low:
+          selectedRow.low !== null && selectedRow.low !== undefined
+            ? Number(selectedRow.low).toFixed(2)
+            : "n/a",
+        volume: selectedRow.volume ?? "n/a",
+        exact: selectedRow.date === apiDate,
+      });
     } catch (err) {
       setError(err.message || "Could not load stock price.");
     } finally {
@@ -78,18 +166,20 @@ export default function StockPage() {
 
         <div style={styles.fieldGroup}>
           <label style={styles.label}>Stock ticker</label>
+
           <input
             type="text"
             value={ticker}
             onChange={(e) => setTicker(e.target.value.toUpperCase())}
             onKeyDown={handleKeyDown}
-            placeholder="AAPL.US"
+            placeholder="AAPL"
             style={styles.input}
           />
         </div>
 
         <div style={styles.fieldGroup}>
           <label style={styles.label}>Date</label>
+
           <input
             type="text"
             value={date}
@@ -100,9 +190,7 @@ export default function StockPage() {
           />
         </div>
 
-        <div style={styles.hint}>
-          Examples: AAPL.US, MSFT.US, TSLA.US, NESN.CH, NOVN.CH
-        </div>
+        <div style={styles.hint}>Examples: AAPL, MSFT, TSLA, NVDA</div>
 
         {loading && <div style={styles.loading}>Loading stock price...</div>}
 
@@ -110,18 +198,14 @@ export default function StockPage() {
           <div style={styles.result}>
             <div style={styles.resultTop}>{result.ticker}</div>
 
-            <div style={styles.resultRate}>
-              {result.close}
-            </div>
+            <div style={styles.resultRate}>{result.close}</div>
 
-            <div style={styles.small}>
-              Closing price on {result.usedDate}
-            </div>
+            <div style={styles.small}>Closing price on {result.usedDate}</div>
 
             {!result.exact && (
               <div style={styles.notice}>
-                No trading data was found for {result.requestedDate}. Showing
-                the previous available trading day instead.
+                No trading data was found for the exact date. Showing the
+                previous trading day instead.
               </div>
             )}
 
@@ -134,10 +218,9 @@ export default function StockPage() {
         {error && <div style={styles.error}>{error}</div>}
 
         <div style={styles.footer}>
-          Stock data provided by Stooq.
+          Stock data sourced from Yahoo Finance.
           <br />
-          This website is not officially affiliated with Stooq or any stock
-          exchange.
+          This website is not officially affiliated with Yahoo Finance.
           <br />
           No guarantee is made regarding the accuracy or completeness of prices.
           Use at your own risk.
