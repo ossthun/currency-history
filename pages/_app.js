@@ -1,14 +1,15 @@
-import Script from "next/script";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Script
-        async
-        strategy="afterInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5958056334367225"
-        crossOrigin="anonymous"
-      />
+      <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5958056334367225"
+          crossOrigin="anonymous"
+        />
+      </Head>
 
       <Component {...pageProps} />
     </>
