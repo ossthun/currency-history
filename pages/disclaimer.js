@@ -147,6 +147,153 @@ const translations = {
       },
     ],
   },
+
+  it: {
+    back: "← Indietro",
+    badge: "Legale",
+    title: "Disclaimer",
+    intro:
+      "Leggi attentamente questo disclaimer prima di utilizzare questo sito.",
+    sections: [
+      {
+        title: "Nessuna consulenza finanziaria",
+        text:
+          "I contenuti di questo sito sono forniti esclusivamente a scopo educativo e informativo e non costituiscono consulenza finanziaria, d’investimento, legale, fiscale o professionale. Gli utenti dovrebbero svolgere le proprie verifiche e consultare professionisti qualificati prima di prendere decisioni finanziarie.",
+      },
+      {
+        title: "Nessuna garanzia di accuratezza",
+        text:
+          "Sebbene vengano compiuti sforzi ragionevoli per fornire informazioni accurate, non viene data alcuna garanzia riguardo all’accuratezza, completezza, affidabilità o tempestività di dati, calcoli, grafici, tassi di cambio o risultati generati da questo sito.",
+      },
+      {
+        title: "Utilizzo a proprio rischio",
+        text:
+          "Tutti gli strumenti, calcolatori, proiezioni, simulazioni e stime sono forniti senza alcuna garanzia. L’uso di questo sito e l’affidamento sui suoi contenuti avvengono interamente a rischio dell’utente.",
+      },
+      {
+        title: "Fonti di dati esterne",
+        text:
+          "Questo sito può utilizzare API esterne e fornitori di dati di terze parti. Il gestore del sito non è responsabile per errori, interruzioni, inesattezze, ritardi o dati mancanti provenienti da servizi di terzi.",
+      },
+      {
+        title: "Nessuna responsabilità",
+        text:
+          "Nella misura massima consentita dalla legge applicabile, il gestore di questo sito non sarà responsabile per danni diretti, indiretti, incidentali, consequenziali, finanziari, fiscali o di altro tipo derivanti dall’uso del sito o dall’affidamento sui suoi contenuti.",
+      },
+      {
+        title: "Nessuna responsabilità per link esterni o affiliati",
+        text:
+          "Questo sito può contenere link esterni, riferimenti o servizi affiliati. Il gestore non è responsabile né liable per siti esterni, servizi, prodotti, programmi di affiliazione o contenuti di terzi.",
+      },
+      {
+        title: "Giurisdizione",
+        text:
+          "Tutte le pretese legali, controversie o procedimenti relativi a questo sito saranno regolati esclusivamente dal diritto svizzero e risolti esclusivamente in Svizzera.",
+      },
+      {
+        title: "Contatto",
+        text: "Contatto: fintool-kit@proton.me",
+      },
+    ],
+  },
+
+  es: {
+    back: "← Atrás",
+    badge: "Legal",
+    title: "Aviso legal",
+    intro:
+      "Lee atentamente este aviso legal antes de utilizar este sitio web.",
+    sections: [
+      {
+        title: "No es asesoramiento financiero",
+        text:
+          "El contenido de este sitio web se proporciona únicamente con fines educativos e informativos y no constituye asesoramiento financiero, de inversión, legal, fiscal o profesional. Los usuarios deben realizar su propia investigación y consultar a profesionales cualificados antes de tomar decisiones financieras.",
+      },
+      {
+        title: "Sin garantía de exactitud",
+        text:
+          "Aunque se hacen esfuerzos razonables para proporcionar información precisa, no se ofrece ninguna garantía sobre la exactitud, integridad, fiabilidad o actualidad de los datos, cálculos, gráficos, tipos de cambio o resultados generados por este sitio.",
+      },
+      {
+        title: "Uso bajo tu propio riesgo",
+        text:
+          "Todas las herramientas, calculadoras, proyecciones, simulaciones y estimaciones se proporcionan sin garantía de ningún tipo. El uso de este sitio web y la confianza en su contenido son enteramente bajo el propio riesgo del usuario.",
+      },
+      {
+        title: "Fuentes de datos externas",
+        text:
+          "Este sitio puede utilizar API externas y proveedores de datos de terceros. El operador de este sitio no es responsable de errores, interrupciones, inexactitudes, retrasos o datos faltantes procedentes de servicios de terceros.",
+      },
+      {
+        title: "Sin responsabilidad",
+        text:
+          "En la máxima medida permitida por la ley aplicable, el operador de este sitio no será responsable de daños directos, indirectos, incidentales, consecuenciales, financieros, fiscales o de otro tipo derivados del uso del sitio o de la confianza en su contenido.",
+      },
+      {
+        title: "Sin responsabilidad por enlaces externos o afiliados",
+        text:
+          "Este sitio puede contener enlaces externos, referencias o servicios de afiliados. El operador no es responsable ni liable por sitios web externos, servicios, productos, programas de afiliados o contenido de terceros.",
+      },
+      {
+        title: "Jurisdicción",
+        text:
+          "Todas las reclamaciones legales, disputas o procedimientos relacionados con este sitio web se regirán exclusivamente por la ley suiza y se resolverán exclusivamente en Suiza.",
+      },
+      {
+        title: "Contacto",
+        text: "Contacto: fintool-kit@proton.me",
+      },
+    ],
+  },
+
+  pt: {
+    back: "← Voltar",
+    badge: "Legal",
+    title: "Aviso legal",
+    intro:
+      "Leia atentamente este aviso legal antes de usar este site.",
+    sections: [
+      {
+        title: "Não é aconselhamento financeiro",
+        text:
+          "O conteúdo deste site é fornecido apenas para fins educacionais e informativos e não constitui aconselhamento financeiro, de investimento, jurídico, fiscal ou profissional. Os usuários devem fazer sua própria pesquisa e consultar profissionais qualificados antes de tomar decisões financeiras.",
+      },
+      {
+        title: "Sem garantia de exatidão",
+        text:
+          "Embora sejam feitos esforços razoáveis para fornecer informações precisas, não há garantia quanto à exatidão, completude, confiabilidade ou atualidade de dados, cálculos, gráficos, taxas de câmbio ou resultados gerados por este site.",
+      },
+      {
+        title: "Uso por sua conta e risco",
+        text:
+          "Todas as ferramentas, calculadoras, projeções, simulações e estimativas são fornecidas sem qualquer garantia. O uso deste site e a confiança em seu conteúdo são inteiramente por conta e risco do usuário.",
+      },
+      {
+        title: "Fontes de dados externas",
+        text:
+          "Este site pode usar APIs externas e fornecedores de dados de terceiros. O operador deste site não é responsável por erros, interrupções, imprecisões, atrasos ou dados ausentes originados de serviços de terceiros.",
+      },
+      {
+        title: "Sem responsabilidade",
+        text:
+          "Na máxima medida permitida pela lei aplicável, o operador deste site não será responsável por quaisquer danos diretos, indiretos, incidentais, consequenciais, financeiros, fiscais ou de outro tipo decorrentes do uso deste site ou da confiança em seu conteúdo.",
+      },
+      {
+        title: "Sem responsabilidade por links externos ou afiliados",
+        text:
+          "Este site pode conter links externos, referências ou serviços afiliados. O operador não é responsável por sites externos, serviços, produtos, programas de afiliados ou conteúdo de terceiros.",
+      },
+      {
+        title: "Jurisdição",
+        text:
+          "Todas as reivindicações legais, disputas ou processos relacionados a este site serão regidos exclusivamente pela lei suíça e resolvidos exclusivamente na Suíça.",
+      },
+      {
+        title: "Contato",
+        text: "Contato: fintool-kit@proton.me",
+      },
+    ],
+  },
 };
 
 export default function DisclaimerPage() {
@@ -159,6 +306,12 @@ export default function DisclaimerPage() {
       setLang("de");
     } else if (browserLang.startsWith("fr")) {
       setLang("fr");
+    } else if (browserLang.startsWith("it")) {
+      setLang("it");
+    } else if (browserLang.startsWith("es")) {
+      setLang("es");
+    } else if (browserLang.startsWith("pt")) {
+      setLang("pt");
     } else {
       setLang("en");
     }
