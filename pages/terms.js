@@ -79,7 +79,8 @@ const translations = {
       },
       {
         title: "Contact",
-        text: "Questions regarding this website, these Terms of Use, or related matters may be sent to: fintool-kit@proton.me",
+        text:
+          "Questions regarding this website, these Terms of Use, or related matters may be sent to: fintool-kit@proton.me",
       },
     ],
   },
@@ -253,6 +254,261 @@ const translations = {
       },
     ],
   },
+
+  it: {
+    back: "← Indietro",
+    badge: "Legale",
+    title: "Termini di utilizzo",
+    intro:
+      "Leggi attentamente questi Termini di utilizzo prima di usare questo sito.",
+    sections: [
+      {
+        title: "Accettazione dei termini",
+        text:
+          "Accedendo a questo sito o utilizzandolo, accetti questi Termini di utilizzo. Se non accetti questi termini, non dovresti utilizzare questo sito.",
+      },
+      {
+        title: "Scopo educativo e informativo",
+        text:
+          "Questo sito offre calcolatori finanziari, grafici, simulazioni e strumenti educativi solo a scopo informativo generale. Il sito non fornisce consulenza finanziaria, d’investimento, legale, fiscale, contabile, ipotecaria, pensionistica o professionale.",
+      },
+      {
+        title: "Nessuna consulenza finanziaria o raccomandazione",
+        text:
+          "Nulla su questo sito deve essere interpretato come raccomandazione ad acquistare, vendere, detenere, prendere in prestito, concedere prestiti, investire, negoziare o concludere qualsiasi transazione finanziaria. Gli utenti sono gli unici responsabili delle proprie decisioni.",
+      },
+      {
+        title: "Responsabilità dell’utente",
+        text:
+          "Gli utenti sono responsabili della verifica indipendente di tutte le informazioni prima di farvi affidamento. Dovresti consultare professionisti qualificati prima di prendere decisioni finanziarie, d’investimento, fiscali, legali, ipotecarie, pensionistiche o altre decisioni importanti.",
+      },
+      {
+        title: "Accuratezza e disponibilità",
+        text:
+          "Sebbene vengano compiuti sforzi ragionevoli per mantenere il sito utile e accurato, non viene fornita alcuna garanzia che strumenti, calcoli, dati, grafici, tassi di cambio, prezzi o altri contenuti siano accurati, completi, aggiornati, disponibili o privi di errori.",
+      },
+      {
+        title: "Dati esterni e servizi di terzi",
+        text:
+          "Questo sito può utilizzare API esterne, fornitori di dati di mercato, hosting provider, servizi di analisi, servizi pubblicitari, servizi affiliati o altri servizi di terzi. Il gestore non è responsabile per accuratezza, legalità, disponibilità, contenuti, politiche, prodotti, servizi o condotta di terzi.",
+      },
+      {
+        title: "Link esterni e link affiliati",
+        text:
+          "Questo sito può contenere link a siti esterni, pubblicità, contenuti sponsorizzati, link affiliati o risorse esterne. L’accesso o l’utilizzo di siti, prodotti, servizi o offerte affiliate di terzi avviene interamente a proprio rischio.",
+      },
+      {
+        title: "Uso consentito",
+        text:
+          "Non puoi abusare di questo sito, interferire con il suo funzionamento, tentare di aggirare controlli di sicurezza, sovraccaricare il servizio, estrarre dati in modo abusivo, effettuare reverse engineering di funzionalità non pubbliche o usarlo per scopi illegali, fuorvianti, dannosi o abusivi.",
+      },
+      {
+        title: "Proprietà intellettuale",
+        text:
+          "Il design, il layout, i testi, il codice, la struttura e i contenuti originali del sito sono protetti dalle leggi applicabili sulla proprietà intellettuale, salvo diversa indicazione. Puoi utilizzare il sito per fini informativi personali, ma non puoi copiare, ridistribuire o sfruttare commercialmente parti sostanziali senza autorizzazione.",
+      },
+      {
+        title: "Nessuna garanzia di disponibilità continua",
+        text:
+          "Il sito può essere modificato, sospeso, limitato o interrotto in qualsiasi momento senza preavviso. Funzionalità, fonti di dati, pagine, calcoli e strumenti possono essere modificati o rimossi.",
+      },
+      {
+        title: "Limitazione di responsabilità",
+        text:
+          "Nella misura massima consentita dalla legge applicabile, il gestore di questo sito non sarà responsabile per danni diretti, indiretti, incidentali, consequenziali, finanziari, fiscali, legati agli investimenti o di altro tipo derivanti dall’uso del sito o dall’affidamento sui suoi contenuti.",
+      },
+      {
+        title: "Legge applicabile",
+        text:
+          "Questi Termini di utilizzo e tutte le pretese, controversie o procedimenti legali relativi a questo sito sono regolati esclusivamente dal diritto svizzero.",
+      },
+      {
+        title: "Giurisdizione e foro competente",
+        text:
+          "Nella misura massima consentita dalla legge applicabile, tutte le pretese, controversie o procedimenti legali relativi a questo sito saranno risolti esclusivamente davanti ai tribunali competenti in Svizzera.",
+      },
+      {
+        title: "Modifiche ai termini",
+        text:
+          "Questi Termini di utilizzo possono essere aggiornati in qualsiasi momento senza preavviso. Si applica la versione pubblicata su questo sito al momento dell’uso. L’uso continuato del sito implica l’accettazione dei termini aggiornati.",
+      },
+      {
+        title: "Contatto",
+        text:
+          "Domande riguardanti questo sito, questi Termini di utilizzo o questioni correlate possono essere inviate a: fintool-kit@proton.me",
+      },
+    ],
+  },
+
+  es: {
+    back: "← Atrás",
+    badge: "Legal",
+    title: "Términos de uso",
+    intro:
+      "Lee atentamente estos Términos de uso antes de utilizar este sitio web.",
+    sections: [
+      {
+        title: "Aceptación de los términos",
+        text:
+          "Al acceder a este sitio web o utilizarlo, aceptas estos Términos de uso. Si no estás de acuerdo con estos términos, no deberías utilizar este sitio.",
+      },
+      {
+        title: "Finalidad educativa e informativa",
+        text:
+          "Este sitio ofrece calculadoras financieras, gráficos, simulaciones y herramientas educativas únicamente con fines informativos generales. El sitio no proporciona asesoramiento financiero, de inversión, legal, fiscal, contable, hipotecario, de pensiones ni profesional.",
+      },
+      {
+        title: "Sin asesoramiento financiero ni recomendaciones",
+        text:
+          "Nada en este sitio debe interpretarse como una recomendación para comprar, vender, mantener, pedir prestado, prestar, invertir, negociar o realizar cualquier transacción financiera. Los usuarios son los únicos responsables de sus propias decisiones.",
+      },
+      {
+        title: "Responsabilidad del usuario",
+        text:
+          "Los usuarios son responsables de verificar toda la información de forma independiente antes de confiar en ella. Debes consultar a profesionales cualificados antes de tomar decisiones financieras, de inversión, fiscales, legales, hipotecarias, de pensiones u otras decisiones importantes.",
+      },
+      {
+        title: "Exactitud y disponibilidad",
+        text:
+          "Aunque se hacen esfuerzos razonables para mantener el sitio útil y preciso, no se garantiza que las herramientas, cálculos, datos, gráficos, tipos de cambio, precios u otros contenidos sean exactos, completos, actuales, disponibles o libres de errores.",
+      },
+      {
+        title: "Datos externos y servicios de terceros",
+        text:
+          "Este sitio puede utilizar API externas, proveedores de datos de mercado, proveedores de hosting, servicios de análisis, proveedores de publicidad, servicios de afiliación u otros servicios de terceros. El operador no es responsable de la exactitud, legalidad, disponibilidad, contenido, políticas, productos, servicios o conducta de terceros.",
+      },
+      {
+        title: "Enlaces externos y enlaces de afiliados",
+        text:
+          "Este sitio puede contener enlaces a sitios externos, anuncios, contenido patrocinado, enlaces de afiliados o recursos externos. El acceso o uso de sitios, productos, servicios u ofertas de afiliados de terceros es enteramente bajo tu propio riesgo.",
+      },
+      {
+        title: "Uso aceptable",
+        text:
+          "No puedes abusar de este sitio, interferir con su funcionamiento, intentar eludir controles de seguridad, sobrecargar el servicio, extraer datos de forma abusiva, aplicar ingeniería inversa a funcionalidades no públicas ni utilizarlo para fines ilegales, engañosos, dañinos o abusivos.",
+      },
+      {
+        title: "Propiedad intelectual",
+        text:
+          "El diseño, la estructura, los textos, el código y el contenido original del sitio están protegidos por las leyes aplicables de propiedad intelectual salvo indicación contraria. Puedes usar el sitio con fines informativos personales, pero no puedes copiar, redistribuir o explotar comercialmente partes sustanciales sin permiso.",
+      },
+      {
+        title: "Sin garantía de disponibilidad continua",
+        text:
+          "El sitio puede ser modificado, suspendido, limitado o discontinuado en cualquier momento sin previo aviso. Funciones, fuentes de datos, páginas, cálculos y herramientas pueden ser modificados o eliminados.",
+      },
+      {
+        title: "Limitación de responsabilidad",
+        text:
+          "En la máxima medida permitida por la ley aplicable, el operador de este sitio no será responsable de daños directos, indirectos, incidentales, consecuenciales, financieros, fiscales, relacionados con inversiones u otros daños derivados del uso del sitio o de la confianza en su contenido.",
+      },
+      {
+        title: "Ley aplicable",
+        text:
+          "Estos Términos de uso y todas las reclamaciones, disputas, controversias o procedimientos legales relacionados con este sitio se regirán exclusivamente por la ley suiza.",
+      },
+      {
+        title: "Jurisdicción y competencia",
+        text:
+          "En la máxima medida permitida por la ley aplicable, todas las reclamaciones, disputas, controversias o procedimientos legales relacionados con este sitio se resolverán exclusivamente ante los tribunales competentes de Suiza.",
+      },
+      {
+        title: "Cambios en estos términos",
+        text:
+          "Estos Términos de uso pueden actualizarse en cualquier momento sin previo aviso. Se aplica la versión publicada en este sitio en el momento del uso. El uso continuado del sitio significa que aceptas los términos actualizados.",
+      },
+      {
+        title: "Contacto",
+        text:
+          "Las preguntas sobre este sitio, estos Términos de uso o asuntos relacionados pueden enviarse a: fintool-kit@proton.me",
+      },
+    ],
+  },
+
+  pt: {
+    back: "← Voltar",
+    badge: "Legal",
+    title: "Termos de uso",
+    intro:
+      "Leia atentamente estes Termos de uso antes de utilizar este site.",
+    sections: [
+      {
+        title: "Aceitação dos termos",
+        text:
+          "Ao acessar ou usar este site, você concorda com estes Termos de uso. Se não concordar com estes termos, não deve utilizar este site.",
+      },
+      {
+        title: "Finalidade educacional e informativa",
+        text:
+          "Este site fornece calculadoras financeiras, gráficos, simulações e ferramentas educacionais apenas para fins informativos gerais. O site não fornece aconselhamento financeiro, de investimento, jurídico, fiscal, contábil, hipotecário, previdenciário ou profissional.",
+      },
+      {
+        title: "Sem aconselhamento financeiro ou recomendações",
+        text:
+          "Nada neste site deve ser entendido como recomendação para comprar, vender, manter, tomar emprestado, emprestar, investir, negociar ou realizar qualquer transação financeira. Os usuários são exclusivamente responsáveis por suas próprias decisões.",
+      },
+      {
+        title: "Responsabilidade do usuário",
+        text:
+          "Os usuários são responsáveis por verificar todas as informações de forma independente antes de confiar nelas. Você deve consultar profissionais qualificados antes de tomar decisões financeiras, de investimento, fiscais, jurídicas, hipotecárias, previdenciárias ou outras decisões importantes.",
+      },
+      {
+        title: "Exatidão e disponibilidade",
+        text:
+          "Embora sejam feitos esforços razoáveis para manter o site útil e preciso, não há garantia de que ferramentas, cálculos, dados, gráficos, taxas de câmbio, preços ou outros conteúdos sejam exatos, completos, atuais, disponíveis ou livres de erros.",
+      },
+      {
+        title: "Dados externos e serviços de terceiros",
+        text:
+          "Este site pode usar APIs externas, fornecedores de dados de mercado, provedores de hospedagem, provedores de análise, provedores de publicidade, serviços afiliados ou outros serviços de terceiros. O operador não é responsável pela exatidão, legalidade, disponibilidade, conteúdo, políticas, produtos, serviços ou conduta de terceiros.",
+      },
+      {
+        title: "Links externos e links afiliados",
+        text:
+          "Este site pode conter links para sites externos, anúncios, conteúdo patrocinado, links afiliados ou recursos externos. Acessar ou usar sites, produtos, serviços ou ofertas afiliadas de terceiros é inteiramente por sua conta e risco.",
+      },
+      {
+        title: "Uso aceitável",
+        text:
+          "Você não pode abusar deste site, interferir em seu funcionamento, tentar contornar controles de segurança, sobrecarregar o serviço, coletar dados abusivamente, fazer engenharia reversa de funcionalidades não públicas ou usá-lo para fins ilegais, enganosos, prejudiciais ou abusivos.",
+      },
+      {
+        title: "Propriedade intelectual",
+        text:
+          "O design, layout, textos, código, estrutura e conteúdo original do site são protegidos pelas leis aplicáveis de propriedade intelectual, salvo indicação em contrário. Você pode usar o site para fins informativos pessoais, mas não pode copiar, redistribuir ou explorar comercialmente partes substanciais sem permissão.",
+      },
+      {
+        title: "Sem garantia de disponibilidade contínua",
+        text:
+          "O site pode ser alterado, suspenso, limitado ou descontinuado a qualquer momento sem aviso prévio. Recursos, fontes de dados, páginas, cálculos e ferramentas podem ser modificados ou removidos.",
+      },
+      {
+        title: "Limitação de responsabilidade",
+        text:
+          "Na máxima medida permitida pela lei aplicável, o operador deste site não será responsável por quaisquer danos diretos, indiretos, incidentais, consequenciais, financeiros, fiscais, relacionados a investimentos ou outros danos decorrentes do uso do site ou da confiança em seu conteúdo.",
+      },
+      {
+        title: "Lei aplicável",
+        text:
+          "Estes Termos de uso e todas as reivindicações, disputas, controvérsias ou procedimentos legais relacionados a este site serão regidos exclusivamente pela lei suíça.",
+      },
+      {
+        title: "Jurisdição e foro",
+        text:
+          "Na máxima medida permitida pela lei aplicável, todas as reivindicações, disputas, controvérsias ou procedimentos legais relacionados a este site serão resolvidos exclusivamente perante os tribunais competentes da Suíça.",
+      },
+      {
+        title: "Alterações destes termos",
+        text:
+          "Estes Termos de uso podem ser atualizados a qualquer momento sem aviso prévio. A versão publicada neste site no momento do uso se aplica. O uso contínuo do site significa que você aceita os termos atualizados.",
+      },
+      {
+        title: "Contato",
+        text:
+          "Perguntas sobre este site, estes Termos de uso ou assuntos relacionados podem ser enviadas para: fintool-kit@proton.me",
+      },
+    ],
+  },
 };
 
 export default function TermsPage() {
@@ -265,6 +521,12 @@ export default function TermsPage() {
       setLang("de");
     } else if (browserLang.startsWith("fr")) {
       setLang("fr");
+    } else if (browserLang.startsWith("it")) {
+      setLang("it");
+    } else if (browserLang.startsWith("es")) {
+      setLang("es");
+    } else if (browserLang.startsWith("pt")) {
+      setLang("pt");
     } else {
       setLang("en");
     }
