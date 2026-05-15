@@ -270,6 +270,276 @@ const translations = {
       },
     ],
   },
+
+  it: {
+    back: "← Indietro",
+    badge: "Legale",
+    title: "Informativa sulla privacy",
+    intro:
+      "Questa informativa spiega come le informazioni possono essere raccolte, trattate e utilizzate quando visiti questo sito.",
+    sections: [
+      {
+        title: "Panoramica",
+        text:
+          "Questo sito offre calcolatori finanziari, grafici, simulazioni e strumenti educativi. È progettato per essere utilizzato senza account utente, login, pagamenti o profili personali.",
+      },
+      {
+        title: "Nessun account utente",
+        text:
+          "Questo sito attualmente non offre account utente, funzioni di login, pagamenti, commenti o profili utente. Non è necessario creare un account per usare gli strumenti.",
+      },
+      {
+        title: "Input nei calcolatori",
+        text:
+          "Numeri, date, ticker, valute e altri valori inseriti nei calcolatori sono usati per generare risultati. La maggior parte degli input viene elaborata direttamente nel browser. Alcuni strumenti possono inviare dati limitati, come ticker, date o codici valuta, a route server-side o API esterne per recuperare dati di mercato o tassi di cambio.",
+      },
+      {
+        title: "Hosting e dati tecnici",
+        text:
+          "Il sito è ospitato da fornitori di infrastruttura terzi. Quando visiti il sito, informazioni tecniche come indirizzo IP, tipo di browser, dati del dispositivo, pagine richieste, timestamp e log del server possono essere trattate automaticamente per sicurezza, debug, prevenzione degli abusi, prestazioni e funzionamento.",
+      },
+      {
+        title: "Fornitori di dati esterni",
+        text:
+          "Alcuni strumenti possono usare fonti di dati esterne o API, ad esempio per tassi di cambio o prezzi storici delle azioni. Le richieste a questi servizi possono includere metadati tecnici e dati di query limitati necessari per restituire le informazioni richieste. Il gestore del sito non controlla le pratiche privacy dei fornitori esterni.",
+      },
+      {
+        title: "Cookie",
+        text:
+          "Questo sito non utilizza intenzionalmente cookie di tracciamento in questa fase. Tuttavia, fornitori di hosting, sistemi di sicurezza, servizi di analisi, pubblicità o servizi terzi incorporati possono usare cookie o tecnologie simili se aggiunti in futuro.",
+      },
+      {
+        title: "Analisi e pubblicità",
+        text:
+          "Se in futuro verranno aggiunti servizi di analisi o pubblicità, essi potranno raccogliere informazioni come visualizzazioni di pagina, dati del dispositivo, posizione approssimativa, fonti di riferimento e dati di interazione. Se vengono usati servizi pubblicitari come Google AdSense, cookie e tecnologie simili possono essere usati per mostrare, misurare e personalizzare annunci dove consentito dalla legge.",
+      },
+      {
+        title: "Base giuridica",
+        text:
+          "Quando la legge applicabile sulla protezione dei dati richiede una base giuridica, il trattamento può basarsi su interessi legittimi, come gestire, proteggere, migliorare e mettere in sicurezza il sito, oppure sul consenso quando richiesto dalla legge, ad esempio per determinati cookie di analisi o pubblicità.",
+      },
+      {
+        title: "Conservazione dei dati",
+        text:
+          "Log tecnici e dati operativi possono essere conservati per il tempo ragionevolmente necessario per sicurezza, debug, conformità legale, prevenzione degli abusi e funzionamento del sito. Il sito non memorizza intenzionalmente profili personali dei calcolatori o dati di account.",
+      },
+      {
+        title: "Condivisione dei dati",
+        text:
+          "Le informazioni possono essere trattate da fornitori di hosting, infrastruttura, API esterne, analisi, pubblicità o altri fornitori di servizi usati per gestire il sito. Le informazioni possono anche essere divulgate se richiesto dalla legge, da procedimenti legali, esigenze di sicurezza o tutela dei diritti.",
+      },
+      {
+        title: "Trasferimenti internazionali",
+        text:
+          "I fornitori di servizi possono trattare dati in paesi diversi da quello di residenza. Gli standard di protezione dei dati possono variare tra giurisdizioni. Usando il sito, comprendi che dati tecnici possono essere trattati tramite infrastrutture internazionali.",
+      },
+      {
+        title: "I tuoi diritti",
+        text:
+          "A seconda della tua posizione, potresti avere diritti di accesso, rettifica, cancellazione, limitazione o opposizione a determinati trattamenti dei tuoi dati personali. Potresti anche avere il diritto di revocare il consenso quando il trattamento si basa sul consenso.",
+      },
+      {
+        title: "Bambini",
+        text:
+          "Questo sito non è destinato ai bambini. Il sito non raccoglie consapevolmente informazioni personali da bambini. Se ritieni che un bambino abbia fornito informazioni personali, contatta il gestore del sito.",
+      },
+      {
+        title: "Sicurezza",
+        text:
+          "Vengono utilizzate misure tecniche e organizzative ragionevoli per proteggere il sito. Tuttavia, nessun sito web, rete o trasmissione Internet può essere garantito come completamente sicuro.",
+      },
+      {
+        title: "Modifiche a questa informativa",
+        text:
+          "Questa informativa sulla privacy può essere aggiornata in qualsiasi momento. Si applica la versione pubblicata su questo sito al momento dell’uso.",
+      },
+      {
+        title: "Contatto",
+        text:
+          "Domande, richieste o dubbi relativi alla privacy possono essere inviati a: fintool-kit@proton.me",
+      },
+    ],
+  },
+
+  es: {
+    back: "← Atrás",
+    badge: "Legal",
+    title: "Política de privacidad",
+    intro:
+      "Esta Política de privacidad explica cómo puede recopilarse, procesarse y utilizarse información cuando visitas este sitio web.",
+    sections: [
+      {
+        title: "Resumen",
+        text:
+          "Este sitio ofrece calculadoras financieras, gráficos, simulaciones y herramientas educativas. Está diseñado para usarse sin cuentas de usuario, inicio de sesión, procesamiento de pagos o perfiles personales.",
+      },
+      {
+        title: "Sin cuentas de usuario",
+        text:
+          "Este sitio actualmente no ofrece cuentas de usuario, funciones de inicio de sesión, pagos, secciones de comentarios o perfiles de usuario. No necesitas crear una cuenta para usar las herramientas.",
+      },
+      {
+        title: "Datos introducidos en las calculadoras",
+        text:
+          "Los números, fechas, tickers, divisas y otros valores que introduces en las calculadoras se usan para generar resultados. La mayoría de los datos se procesan directamente en tu navegador. Algunas herramientas pueden enviar datos limitados, como símbolos bursátiles, fechas o códigos de divisa, a rutas del servidor o API externas para obtener datos de mercado o tipos de cambio.",
+      },
+      {
+        title: "Alojamiento y datos técnicos",
+        text:
+          "El sitio está alojado por proveedores de infraestructura de terceros. Al visitar el sitio, información técnica como dirección IP, tipo de navegador, información del dispositivo, páginas solicitadas, marcas de tiempo y registros del servidor puede procesarse automáticamente para seguridad, depuración, prevención de abusos, rendimiento y operación.",
+      },
+      {
+        title: "Proveedores de datos externos",
+        text:
+          "Algunas herramientas pueden usar fuentes de datos externas o API, por ejemplo para tipos de cambio o precios históricos de acciones. Las solicitudes a estos servicios pueden incluir metadatos técnicos y datos de consulta limitados necesarios para devolver la información solicitada. El operador del sitio no controla las prácticas de privacidad de proveedores externos.",
+      },
+      {
+        title: "Cookies",
+        text:
+          "Este sitio no utiliza intencionadamente cookies de seguimiento en esta etapa. Sin embargo, proveedores de alojamiento, sistemas de seguridad, servicios de análisis, publicidad o servicios integrados de terceros pueden usar cookies o tecnologías similares si se añaden en el futuro.",
+      },
+      {
+        title: "Analítica y publicidad",
+        text:
+          "Si se añaden servicios de analítica o publicidad en el futuro, pueden recopilar información como vistas de página, datos del dispositivo, ubicación aproximada, fuentes de referencia y datos de interacción. Si se usan servicios publicitarios como Google AdSense, pueden emplearse cookies y tecnologías similares para mostrar, medir y personalizar anuncios donde la ley lo permita.",
+      },
+      {
+        title: "Base legal",
+        text:
+          "Cuando la legislación aplicable de protección de datos requiera una base legal, el tratamiento puede basarse en intereses legítimos, como operar, proteger, mejorar y asegurar el sitio, o en el consentimiento cuando sea legalmente necesario, por ejemplo para ciertas cookies de analítica o publicidad.",
+      },
+      {
+        title: "Conservación de datos",
+        text:
+          "Los registros técnicos y datos operativos pueden conservarse durante el tiempo razonablemente necesario para seguridad, depuración, cumplimiento legal, prevención de abusos y operación del sitio. El sitio no almacena intencionadamente perfiles personales de calculadoras ni datos de cuenta.",
+      },
+      {
+        title: "Compartición de datos",
+        text:
+          "La información puede ser procesada por proveedores de alojamiento, infraestructura, API externas, analítica, publicidad u otros servicios utilizados para operar el sitio. También puede divulgarse información si lo exige la ley, un proceso legal, necesidades de seguridad o protección de derechos.",
+      },
+      {
+        title: "Transferencias internacionales",
+        text:
+          "Los proveedores de servicios pueden procesar datos en países distintos al de tu residencia. Los estándares de protección de datos pueden variar entre jurisdicciones. Al usar el sitio, entiendes que los datos técnicos pueden procesarse mediante infraestructura internacional.",
+      },
+      {
+        title: "Tus derechos",
+        text:
+          "Según tu ubicación, puedes tener derechos de acceso, rectificación, eliminación, limitación u oposición a ciertos tratamientos de tus datos personales. También puedes tener derecho a retirar el consentimiento cuando el tratamiento se base en consentimiento.",
+      },
+      {
+        title: "Niños",
+        text:
+          "Este sitio no está destinado a niños. El sitio no recopila intencionadamente información personal de niños. Si crees que un niño ha proporcionado información personal, contacta con el operador del sitio.",
+      },
+      {
+        title: "Seguridad",
+        text:
+          "Se utilizan medidas técnicas y organizativas razonables para proteger el sitio. Sin embargo, ningún sitio web, red o transmisión por Internet puede garantizarse como completamente seguro.",
+      },
+      {
+        title: "Cambios en esta política",
+        text:
+          "Esta Política de privacidad puede actualizarse en cualquier momento. Se aplica la versión publicada en este sitio en el momento del uso.",
+      },
+      {
+        title: "Contacto",
+        text:
+          "Las preguntas, solicitudes o inquietudes relacionadas con la privacidad pueden enviarse a: fintool-kit@proton.me",
+      },
+    ],
+  },
+
+  pt: {
+    back: "← Voltar",
+    badge: "Legal",
+    title: "Política de privacidade",
+    intro:
+      "Esta Política de privacidade explica como informações podem ser coletadas, processadas e usadas quando você visita este site.",
+    sections: [
+      {
+        title: "Visão geral",
+        text:
+          "Este site fornece calculadoras financeiras, gráficos, simulações e ferramentas educacionais. O site foi projetado para ser usado sem contas de usuário, login, processamento de pagamentos ou perfis pessoais.",
+      },
+      {
+        title: "Sem contas de usuário",
+        text:
+          "Este site atualmente não oferece contas de usuário, login, pagamentos, seções de comentários ou perfis de usuário. Você não precisa criar uma conta para usar as ferramentas.",
+      },
+      {
+        title: "Entradas nas calculadoras",
+        text:
+          "Números, datas, tickers, moedas e outros valores inseridos nas calculadoras são usados para gerar resultados. A maioria das entradas é processada diretamente no navegador. Algumas ferramentas podem enviar dados limitados, como símbolos, datas ou códigos de moeda, para rotas do servidor ou APIs externas para obter dados de mercado ou câmbio.",
+      },
+      {
+        title: "Hospedagem e dados técnicos",
+        text:
+          "O site é hospedado por provedores de infraestrutura de terceiros. Ao visitar o site, informações técnicas como endereço IP, tipo de navegador, informações do dispositivo, páginas solicitadas, registros de data e hora e logs do servidor podem ser processadas automaticamente para segurança, depuração, prevenção de abuso, desempenho e operação.",
+      },
+      {
+        title: "Fornecedores externos de dados",
+        text:
+          "Algumas ferramentas podem usar fontes de dados externas ou APIs, por exemplo para taxas de câmbio ou preços históricos de ações. Solicitações a esses serviços podem incluir metadados técnicos e dados de consulta limitados necessários para retornar as informações solicitadas. O operador do site não controla as práticas de privacidade de fornecedores externos.",
+      },
+      {
+        title: "Cookies",
+        text:
+          "Este site não usa intencionalmente cookies de rastreamento nesta fase. No entanto, provedores de hospedagem, sistemas de segurança, serviços de análise, publicidade ou serviços terceiros incorporados podem usar cookies ou tecnologias semelhantes se forem adicionados no futuro.",
+      },
+      {
+        title: "Análise e publicidade",
+        text:
+          "Se serviços de análise ou publicidade forem adicionados no futuro, eles podem coletar informações como visualizações de página, dados do dispositivo, localização aproximada, fontes de referência e dados de interação. Se serviços publicitários como Google AdSense forem usados, cookies e tecnologias semelhantes podem ser usados para exibir, medir e personalizar anúncios onde permitido por lei.",
+      },
+      {
+        title: "Base legal",
+        text:
+          "Quando a lei aplicável de proteção de dados exigir uma base legal, o processamento pode basear-se em interesses legítimos, como operar, proteger, melhorar e assegurar o site, ou em consentimento quando exigido por lei, por exemplo para certos cookies de análise ou publicidade.",
+      },
+      {
+        title: "Retenção de dados",
+        text:
+          "Logs técnicos e dados operacionais podem ser mantidos pelo tempo razoavelmente necessário para segurança, depuração, conformidade legal, prevenção de abuso e operação do site. O site não armazena intencionalmente perfis pessoais de calculadoras ou dados de conta.",
+      },
+      {
+        title: "Compartilhamento de dados",
+        text:
+          "Informações podem ser processadas por provedores de hospedagem, infraestrutura, APIs externas, análise, publicidade ou outros serviços usados para operar o site. Informações também podem ser divulgadas se exigido por lei, processo legal, necessidades de segurança ou proteção de direitos.",
+      },
+      {
+        title: "Transferências internacionais",
+        text:
+          "Prestadores de serviços podem processar dados em países diferentes do seu país de residência. Padrões de proteção de dados podem variar entre jurisdições. Ao usar o site, você entende que dados técnicos podem ser processados por infraestrutura internacional.",
+      },
+      {
+        title: "Seus direitos",
+        text:
+          "Dependendo da sua localização, você pode ter direitos de acessar, corrigir, excluir, restringir ou se opor a certos processamentos de seus dados pessoais. Você também pode ter o direito de retirar consentimento quando o processamento se baseia em consentimento.",
+      },
+      {
+        title: "Crianças",
+        text:
+          "Este site não é destinado a crianças. O site não coleta intencionalmente informações pessoais de crianças. Se você acredita que uma criança forneceu informações pessoais, entre em contato com o operador do site.",
+      },
+      {
+        title: "Segurança",
+        text:
+          "Medidas técnicas e organizacionais razoáveis são usadas para proteger o site. No entanto, nenhum site, rede ou transmissão pela Internet pode ser garantido como completamente seguro.",
+      },
+      {
+        title: "Alterações nesta política",
+        text:
+          "Esta Política de privacidade pode ser atualizada a qualquer momento. A versão publicada neste site no momento do uso se aplica.",
+      },
+      {
+        title: "Contato",
+        text:
+          "Perguntas, solicitações ou preocupações relacionadas à privacidade podem ser enviadas para: fintool-kit@proton.me",
+      },
+    ],
+  },
 };
 
 export default function PrivacyPage() {
@@ -282,6 +552,12 @@ export default function PrivacyPage() {
       setLang("de");
     } else if (browserLang.startsWith("fr")) {
       setLang("fr");
+    } else if (browserLang.startsWith("it")) {
+      setLang("it");
+    } else if (browserLang.startsWith("es")) {
+      setLang("es");
+    } else if (browserLang.startsWith("pt")) {
+      setLang("pt");
     } else {
       setLang("en");
     }
