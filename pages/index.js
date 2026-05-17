@@ -11,6 +11,7 @@ const translations = {
     terms: "Terms",
     privacy: "Privacy",
     about: "About",
+    contact: "Contact",
 
     currencyTitle: "Currency Converter",
     currencyText: "Look up historical exchange rates by currency and date.",
@@ -64,6 +65,7 @@ const translations = {
     terms: "Nutzungsbedingungen",
     privacy: "Datenschutz",
     about: "Über",
+    contact: "Kontakt",
 
     currencyTitle: "Währungsrechner",
     currencyText:
@@ -121,6 +123,7 @@ const translations = {
     terms: "Conditions",
     privacy: "Confidentialité",
     about: "À propos",
+    contact: "Contact",
 
     currencyTitle: "Convertisseur de devises",
     currencyText:
@@ -180,6 +183,7 @@ const translations = {
     terms: "Termini",
     privacy: "Privacy",
     about: "Informazioni",
+    contact: "Contatto",
 
     currencyTitle: "Convertitore di valuta",
     currencyText: "Consulta tassi di cambio storici per valuta e data.",
@@ -235,6 +239,7 @@ const translations = {
     terms: "Términos",
     privacy: "Privacidad",
     about: "Acerca de",
+    contact: "Contacto",
 
     currencyTitle: "Conversor de divisas",
     currencyText: "Consulta tipos de cambio históricos por divisa y fecha.",
@@ -290,6 +295,7 @@ const translations = {
     terms: "Termos",
     privacy: "Privacidade",
     about: "Sobre",
+    contact: "Contato",
 
     currencyTitle: "Conversor de moedas",
     currencyText: "Consulte taxas de câmbio históricas por moeda e data.",
@@ -459,6 +465,10 @@ export default function Home() {
             <span style={styles.separator}>·</span>
             <a href="/about" style={styles.legalLink}>
               {t.about}
+            </a>
+            <span style={styles.separator}>·</span>
+            <a href="/contact" style={styles.legalLink}>
+              {t.contact}
             </a>
           </div>
         </div>
