@@ -17,7 +17,6 @@ const translations = {
     title: "Kontakt",
     subtitle: "Fragen, Feedback, Vorschläge, Fehlermeldungen oder Kooperationsanfragen sind willkommen.",
     heading: "E-Mail",
-    text: "2026, fintool-kit.",
     footer: "Pädagogische Finanztools aus der Schweiz.",
   },
   fr: {
