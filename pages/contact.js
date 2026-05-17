@@ -25,7 +25,6 @@ const translations = {
     title: "Contact",
     subtitle: "Questions, commentaires, suggestions, signalements de bugs ou demandes de partenariat sont les bienvenus.",
     heading: "E-mail",
-    text: "2026, fintool-kit.",
     footer: "Outils financiers éducatifs créés en Suisse.",
   },
   it: {
@@ -34,7 +33,6 @@ const translations = {
     title: "Contatto",
     subtitle: "Domande, feedback, suggerimenti, segnalazioni di bug o richieste di collaborazione sono benvenuti.",
     heading: "E-mail",
-    text: "2026, fintool-kit.",
     footer: "Strumenti finanziari educativi creati in Svizzera.",
   },
   es: {
@@ -43,7 +41,6 @@ const translations = {
     title: "Contacto",
     subtitle: "Preguntas, comentarios, sugerencias, informes de errores o consultas de colaboración son bienvenidos.",
     heading: "Correo electrónico",
-    text: "2026, fintool-kit.",
     footer: "Herramientas financieras educativas creadas en Suiza.",
   },
   pt: {
@@ -52,7 +49,6 @@ const translations = {
     title: "Contato",
     subtitle: "Perguntas, feedback, sugestões, relatos de bugs ou propostas de parceria são bem-vindos.",
     heading: "E-mail",
-    text: "2026, fintool-kit.",
     footer: "Ferramentas financeiras educacionais criadas na Suíça.",
   },
 };
