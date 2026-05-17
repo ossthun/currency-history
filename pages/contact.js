@@ -9,7 +9,6 @@ const translations = {
     title: "Contact",
     subtitle: "Questions, feedback, suggestions, bug reports, or partnership inquiries are welcome.",
     heading: "Email",
-    text: "2026, fintool-kit.",
     footer: "Educational financial tools created in Switzerland.",
   },
   de: {
