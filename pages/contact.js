@@ -1,38 +1,102 @@
+import { useEffect, useState } from "react";
+
 const email = "fintool-kit@proton.me";
 
+const translations = {
+  en: {
+    back: "← All tools",
+    badge: "Contact",
+    title: "Contact",
+    subtitle: "Questions, feedback, suggestions, bug reports, or partnership inquiries are welcome.",
+    heading: "Email",
+    text: "If you notice incorrect calculations, broken data, bugs, or have ideas for new financial tools, feel free to get in touch.",
+    footer: "Educational financial tools created in Switzerland.",
+  },
+  de: {
+    back: "← Alle Tools",
+    badge: "Kontakt",
+    title: "Kontakt",
+    subtitle: "Fragen, Feedback, Vorschläge, Fehlermeldungen oder Kooperationsanfragen sind willkommen.",
+    heading: "E-Mail",
+    text: "Wenn du falsche Berechnungen, fehlerhafte Daten, Bugs oder Ideen für neue Finanztools bemerkst, melde dich gerne.",
+    footer: "Pädagogische Finanztools aus der Schweiz.",
+  },
+  fr: {
+    back: "← Tous les outils",
+    badge: "Contact",
+    title: "Contact",
+    subtitle: "Questions, commentaires, suggestions, signalements de bugs ou demandes de partenariat sont les bienvenus.",
+    heading: "E-mail",
+    text: "Si vous remarquez des calculs incorrects, des données erronées, des bugs ou si vous avez des idées pour de nouveaux outils financiers, n’hésitez pas à nous contacter.",
+    footer: "Outils financiers éducatifs créés en Suisse.",
+  },
+  it: {
+    back: "← Tutti gli strumenti",
+    badge: "Contatto",
+    title: "Contatto",
+    subtitle: "Domande, feedback, suggerimenti, segnalazioni di bug o richieste di collaborazione sono benvenuti.",
+    heading: "E-mail",
+    text: "Se noti calcoli errati, dati non corretti, bug o hai idee per nuovi strumenti finanziari, sentiti libero di contattarci.",
+    footer: "Strumenti finanziari educativi creati in Svizzera.",
+  },
+  es: {
+    back: "← Todas las herramientas",
+    badge: "Contacto",
+    title: "Contacto",
+    subtitle: "Preguntas, comentarios, sugerencias, informes de errores o consultas de colaboración son bienvenidos.",
+    heading: "Correo electrónico",
+    text: "Si notas cálculos incorrectos, datos erróneos, fallos o tienes ideas para nuevas herramientas financieras, no dudes en contactar.",
+    footer: "Herramientas financieras educativas creadas en Suiza.",
+  },
+  pt: {
+    back: "← Todas as ferramentas",
+    badge: "Contato",
+    title: "Contato",
+    subtitle: "Perguntas, feedback, sugestões, relatos de bugs ou propostas de parceria são bem-vindos.",
+    heading: "E-mail",
+    text: "Se você notar cálculos incorretos, dados errados, bugs ou tiver ideias para novas ferramentas financeiras, fique à vontade para entrar em contato.",
+    footer: "Ferramentas financeiras educacionais criadas na Suíça.",
+  },
+};
+
 export default function ContactPage() {
+  const [lang, setLang] = useState("en");
+
+  useEffect(() => {
+    const browserLang = navigator.language.toLowerCase();
+
+    if (browserLang.startsWith("de")) setLang("de");
+    else if (browserLang.startsWith("fr")) setLang("fr");
+    else if (browserLang.startsWith("it")) setLang("it");
+    else if (browserLang.startsWith("es")) setLang("es");
+    else if (browserLang.startsWith("pt")) setLang("pt");
+    else setLang("en");
+  }, []);
+
+  const t = translations[lang] || translations.en;
+
   return (
     <main style={styles.page}>
       <div style={styles.card}>
-        <a href="/" style={styles.backLink}>
-          ← Back
-        </a>
+        <a href="/" style={styles.backLink}>{t.back}</a>
 
-        <div style={styles.badge}>Contact</div>
+        <div style={styles.badge}>{t.badge}</div>
 
-        <h1 style={styles.title}>Contact</h1>
+        <h1 style={styles.title}>{t.title}</h1>
 
-        <p style={styles.subtitle}>
-          Questions, feedback, suggestions, bug reports, or partnership
-          inquiries are welcome.
-        </p>
+        <p style={styles.subtitle}>{t.subtitle}</p>
 
         <div style={styles.contactBox}>
-          <h2 style={styles.heading}>Email</h2>
+          <h2 style={styles.heading}>{t.heading}</h2>
 
           <a href={`mailto:${email}`} style={styles.email}>
             {email}
           </a>
 
-          <p style={styles.text}>
-            If you notice incorrect calculations, broken data, bugs, or have
-            ideas for new financial tools, feel free to get in touch.
-          </p>
+          <p style={styles.text}>{t.text}</p>
         </div>
 
-        <div style={styles.footer}>
-          Educational financial tools created in Switzerland.
-        </div>
+        <div style={styles.footer}>{t.footer}</div>
       </div>
     </main>
   );
@@ -45,13 +109,10 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    background:
-      "linear-gradient(135deg, #dbeafe 0%, #f8fafc 45%, #ede9fe 100%)",
-    fontFamily:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif",
+    background: "linear-gradient(135deg, #dbeafe 0%, #f8fafc 45%, #ede9fe 100%)",
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif",
     padding: "20px",
   },
-
   card: {
     width: "100%",
     maxWidth: "700px",
@@ -61,7 +122,6 @@ const styles = {
     boxShadow: "0 24px 70px rgba(15,23,42,0.14)",
     border: "1px solid rgba(255,255,255,0.8)",
   },
-
   backLink: {
     display: "inline-flex",
     marginBottom: "28px",
@@ -73,7 +133,6 @@ const styles = {
     fontWeight: "700",
     fontSize: "14px",
   },
-
   badge: {
     display: "inline-block",
     padding: "6px 12px",
@@ -84,14 +143,12 @@ const styles = {
     fontWeight: "700",
     marginBottom: "16px",
   },
-
   title: {
     margin: 0,
     fontSize: "40px",
     color: "#0f172a",
     letterSpacing: "-0.04em",
   },
-
   subtitle: {
     marginTop: "14px",
     marginBottom: "32px",
@@ -99,19 +156,16 @@ const styles = {
     fontSize: "17px",
     lineHeight: 1.7,
   },
-
   contactBox: {
     background: "#f8fafc",
     border: "1px solid #e2e8f0",
     borderRadius: "20px",
     padding: "28px",
   },
-
   heading: {
     marginTop: 0,
     color: "#0f172a",
   },
-
   email: {
     display: "inline-block",
     marginBottom: "18px",
@@ -120,13 +174,11 @@ const styles = {
     color: "#2563eb",
     textDecoration: "none",
   },
-
   text: {
     color: "#475569",
     lineHeight: 1.8,
     fontSize: "16px",
   },
-
   footer: {
     marginTop: "32px",
     textAlign: "center",
